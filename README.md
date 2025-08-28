@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vercel Clone Landing Page
+
+A modern, responsive landing page clone of Vercel.com built with Next.js 15 and Tailwind CSS v4.
+
+## Features
+
+- **Hero Section**: Eye-catching hero with animated triangle logo and CTA buttons
+- **Git-connected Deploys**: Terminal-style interface showing deployment process
+- **Collaborative Pre-production**: Chat interface for team collaboration
+- **Observability**: Analytics and monitoring features
+- **AI Gateway**: AI deployment capabilities
+- **Instant Rollbacks**: Deployment management with rollback functionality
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
+- **Build Tool**: Turbopack
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000)
+
+## Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+└── components/
+    ├── Hero.tsx
+    ├── Features.tsx
+    ├── Analytics.tsx
+    ├── AIGateway.tsx
+    ├── Rollbacks.tsx
+    └── Footer.tsx
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Components
 
-## Learn More
+- **Hero**: Main landing section with animated logo and CTAs
+- **Features**: Git deployments and team collaboration
+- **Analytics**: Observability and monitoring
+- **AI Gateway**: AI model deployment interface
+- **Rollbacks**: Deployment management system
+- **Footer**: Call-to-action sections and enterprise features
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project uses Tailwind CSS utility classes for styling. You can easily customize:
+- Colors and themes
+- Spacing and layout
+- Typography
+- Animations and transitions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Browser Support
 
-## Deploy on Vercel
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a clone project for educational purposes. All design elements are inspired by Vercel.com.
