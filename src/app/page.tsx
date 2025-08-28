@@ -13,10 +13,10 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
-      <section className='flex justify-center mx-auto'>
+      <section className='flex flex-col lg:flex-row justify-center mx-auto'>
       <Analytics />
       </section>
-      <section className='flex justify-center mx-auto'>
+      <section className='flex flex-col lg:flex-row justify-center mx-auto'>
       <AIGateway />
       <Rollbacks />
       </section>

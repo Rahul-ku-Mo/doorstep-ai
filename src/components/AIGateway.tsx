@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AIGateway() {
   return (
-    <div className="flex gap-16 flex-col border border-zinc-800 p-12 w-full max-w-xl border-r-0">
+    <div className="flex gap-8 lg:gap-16 flex-col border border-zinc-800 p-6 sm:p-8 lg:p-12 w-full lg:max-w-xl lg:border-r-0">
       {/* AI Gateway Content */}
       <div className="space-y-2">
         <div className="flex items-center gap-2">
@@ -26,8 +26,8 @@ export default function AIGateway() {
           </h2>
         </div>
 
-        <div className="text-xl tracking-tighter max-w-sm text-zinc-400">
-          <span className="text-2xl font-bold text-white">
+        <div className="text-lg sm:text-xl tracking-tighter max-w-sm text-zinc-400">
+          <span className="text-xl sm:text-2xl font-bold text-white">
             Deploy AI in seconds.
           </span>
           Access all major models through a single, unified interface and shared
@@ -36,12 +36,13 @@ export default function AIGateway() {
       </div>
 
       {/* AI Gateway Visual */}
-      <div className="bg-transparent rounded-2xl p-8">
+      <div className="bg-transparent rounded-2xl p-4 sm:p-6 lg:p-8 overflow-hidden">
         <Image
-          src={"/ai-gateway-full-dark.svg"}
+          src="/ai-gateway-full-dark.svg"
           width={500}
           height={500}
           alt="AI Gateway"
+          className="w-full h-auto"
         />
       </div>
     </div>

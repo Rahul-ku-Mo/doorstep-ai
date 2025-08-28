@@ -14,19 +14,19 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="text-center relative z-20">
           {/* Main Heading */}
-          <h1 className="text-5xl tracking-tight font-semibold text-zinc-100 mb-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight font-semibold text-zinc-100 mb-2">
             Build and deploy on the AI Cloud.
           </h1>
 
           {/* Subheading */}
-          <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 my-8 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 my-6 sm:my-8 leading-relaxed px-4 sm:px-0">
             Vercel provides the developer tools and cloud infrastructure to
             build, scale, and secure a faster, more personalized web.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group relative cursor-pointer inline-flex items-center justify-center px-4 py-4 text-base font-medium text-black bg-white rounded-full transition-all duration-200 hover:shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
+            <button className="group relative cursor-pointer inline-flex items-center justify-center px-6 sm:px-4 py-3 sm:py-4 text-sm sm:text-base font-medium text-black bg-white rounded-full transition-all duration-200 hover:shadow-xl w-full sm:w-auto">
               <svg
                 className="w-5 h-5 mr-3 transition-transform duration-200 group-hover:scale-110"
                 viewBox="0 0 74 64"
@@ -38,21 +38,21 @@ export default function Hero() {
               <span className="sm:hidden">Deploy</span>
             </button>
 
-            <button className="px-12 py-4 text-base border border-zinc-800 font-medium text-white bg-black rounded-full transition-all duration-200">
+            <button className="px-6 sm:px-12 py-3 sm:py-4 text-sm sm:text-base border border-zinc-800 font-medium text-white bg-black rounded-full transition-all duration-200 w-full sm:w-auto">
               Get a Demo
             </button>
           </div>
         </div>
 
         {/* Animated Triangle Logo */}
-        <div className="mt-20 flex justify-center">
+        <div className="mt-12 sm:mt-16 lg:mt-20 flex justify-center px-4">
           <div className="relative z-20">
             {/* Rainbow gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-green-400 via-orange-400 to-red-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 via-orange-400 to-red-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
             {/* Triangle */}
             <svg
-              className="relative size-48 transition-transform duration-500 hover:scale-110"
+              className="relative size-32 sm:size-40 lg:size-48 transition-transform duration-500 hover:scale-110"
               viewBox="0 0 1200 700"
               fill="none"
             >
@@ -85,18 +85,18 @@ export default function Hero() {
       </div>
 
       
-      <div className="mt-16 text-center flex flex-col items-center justify-center relative z-20">
-        <span className="text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center">
+      <div className="my-12 sm:my-16 text-center flex flex-col items-center justify-center relative z-20 px-4">
+        <span className="text-lg sm:text-2xl lg:text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center flex-wrap justify-center">
           Develop with your favorite tools
-          <Terminal />
+          <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />
         </span>
-        <div>
-          <div className="text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center">
+        <div className="flex flex-col items-center">
+          <div className="text-lg sm:text-2xl lg:text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center flex-wrap justify-center">
             Launch globally, instantly
-            <Globe />
+            <Globe className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
-          <span className="text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center">
-            Keep pushing <GitBranch />
+          <span className="text-lg sm:text-2xl lg:text-3xl font-semibold tracking-tight inline-flex gap-1.5 items-center flex-wrap justify-center">
+            Keep pushing <GitBranch className="w-5 h-5 sm:w-6 sm:h-6" />
           </span>
         </div>
       </div>
