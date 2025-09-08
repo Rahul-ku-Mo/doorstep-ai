@@ -1,18 +1,70 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  /* Tailwind v4 design tokens for custom colors */
+  --color-primary: #1560FF;
+  --color-secondary: #DEE9F4;
+  --color-black: #212529;
+  --color-card: #ffffff;
+  --color-border-gray: #f1f3f5;
+  --color-medium-gray: #666666;
+  --color-success: #1560FF;
+  --color-info: #CED4DA;
+  --color-warning: #FFC961;
+  --color-error: #CFF7D3;
+
+  --color-background: #fafafa;
+
+  /* Custom font sizes to replace old tailwind.config.ts entries */
+  --text-3_5xl: 32px;
+  --text-3_5xl--line-height: 1.4;
+  --text-3_5xl--letter-spacing: 0;
+
+  --text-4_5xl: 40px;
+  --text-4_5xl--line-height: 1.2;
+  --text-4_5xl--letter-spacing: -0.01em;
+
+  --text-5_5xl: 56px;
+  --text-5_5xl--line-height: 1.1;
+  --text-5_5xl--letter-spacing: -0.02em;
+
+
+  /* Custom fonts */
+  --font-sf: "SF Pro Display", sans-serif;
+  
+}
+
+/* Prefer system-installed SF Pro Display when available */
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"), local("SF Pro Display");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"), local("SF Pro Display");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"), local("SF Pro Display");
+}
+
+ :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
