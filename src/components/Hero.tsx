@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pt-28">
       {/* Hero Content */}
-      <div className="relative mx-auto max-w-6xl border border-gray-300 px-4 py-56 sm:px-6 lg:px-8">
+      <div className="border-medium-gray relative mx-auto max-w-6xl border border-x px-4 py-56 sm:px-6 lg:px-8">
         <div className="relative z-20 mx-auto max-w-2xl text-center">
           {/* Main Heading */}
           <h1 className="mb-2 text-3xl font-semibold tracking-tight text-black sm:text-4xl lg:text-5xl">
@@ -49,11 +49,24 @@ export default function Hero() {
               />
             ))}
           </div>
+
+          {/* Corner plus marks */}
+          <svg className="absolute -left-[8.5px] -top-2 size-4 text-black z-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          <svg className="absolute -right-[8.5px] -top-2 h-4 w-4 text-black z-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        
         </div>
+
+
+
       </div>
 
       {/* Background Image */}
       <Image src="/Hero.png" fill={true} alt="Hero" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#fafafa]/10 to-[#fafafa]/90"></div>
     </section>
   );
 }

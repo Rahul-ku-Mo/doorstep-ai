@@ -7,11 +7,12 @@
   --color-black: #212529;
   --color-card: #ffffff;
   --color-border-gray: #f1f3f5;
-  --color-medium-gray: #666666;
+  --color-medium-gray: #eaebeb;
   --color-success: #1560FF;
   --color-info: #CED4DA;
   --color-warning: #FFC961;
   --color-error: #CFF7D3;
+  --color-accent: #939290;
 
   --color-background: #fafafa;
 
@@ -31,6 +32,7 @@
 
   /* Custom fonts */
   --font-sf: "SF Pro Display", sans-serif;
+  --font-geist-mono: "Geist Mono", sans-serif;
   
 }
 

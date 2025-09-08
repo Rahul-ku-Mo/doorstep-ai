@@ -1,26 +1,21 @@
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
-import Analytics from '@/components/Analytics'
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 
-import AIGateway from '@/components/AIGateway'
-import Rollbacks from '@/components/Rollbacks'
-import Footer from '@/components/Footer'
+import Reliability from "@/components/Reliability";
+import OrchestrateDelivaries from "@/components/OrchestrateDelivaries";
+import TheChallenge from "@/components/TheChallenge";
+
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background min-h-screen">
       <Header />
       <Hero />
-      <Features />
-      <section className='flex flex-col lg:flex-row justify-center mx-auto'>
-      <Analytics />
-      </section>
-      <section className='flex flex-col lg:flex-row justify-center mx-auto'>
-      <AIGateway />
-      <Rollbacks />
-      </section>
+      <TheChallenge />
+      <OrchestrateDelivaries />
+      <Reliability />
       <Footer />
     </main>
-  )
+  );
 }
