@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28">
+    <section className="relative overflow-hidden pt-24 sm:pt-28">
       {/* Hero Content */}
-      <div className="border-medium-gray relative mx-auto max-w-6xl border border-x px-4 py-56 sm:px-6 lg:px-8">
+      <div className="border-medium-gray relative mx-auto max-w-6xl border border-x px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-56">
         <div className="relative z-20 mx-auto max-w-2xl text-center">
           {/* Main Heading */}
           <h1 className="mb-2 text-3xl font-semibold tracking-tight text-black sm:text-4xl lg:text-5xl">
@@ -17,7 +17,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheading */}
-          <p className="mx-auto my-6 max-w-2xl px-4 text-lg text-gray-600 sm:my-8 sm:px-0 sm:text-base lg:text-xl">
+          <p className="mx-auto my-6 max-w-2xl px-4 text-base text-gray-600 sm:my-8 sm:px-0 sm:text-base lg:text-xl">
             Tools that bring precision to the final stretch of delivery.
             Eliminate confusion, reduce refunds, and deliver with confidence.
           </p>
@@ -37,7 +37,7 @@ export default function Hero() {
         </div>
 
         {/* Grid Overlay */}
-        <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
           <div
             className="grid w-full grid-cols-11 gap-0"
             style={{ aspectRatio: "11/6" }}
@@ -65,8 +65,8 @@ export default function Hero() {
       </div>
 
       {/* Background Image */}
-      <Image src="/Hero.png" fill={true} alt="Hero" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#fafafa]/10 to-[#fafafa]/90"></div>
+      <Image src="/Hero.png" fill={true} alt="Hero" className="md:object-cover object-contain" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#fafafa]/20 to-[#fafafa]"></div>
     </section>
   );
 }

@@ -8,48 +8,20 @@ export default function Footer() {
       {/* Main CTA Section */}
       <section className="border-medium-gray w-full border">
         {/* Decorative bar above */}
-        <div className="flex justify-center">
-          {(() => {
-            const width = 1152;
-            const height = 101;
-            const columns = 24; // 48px grid across width
-            const gap = width / columns; // 48
-            const accentIndices = new Set([1, 2, 18, 19]);
-            return (
-              <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-                {Array.from({ length: columns + 1 }, (_, i) => {
-                  const x = Math.round(i * gap) + 0.5;
-                  const isAccent = accentIndices.has(i);
-                  return (
-                    <line
-                      key={i}
-                      opacity={0.1}
-                      x1={x}
-                      y1={0.818359}
-                      x2={x}
-                      y2={100.818}
-                      stroke={isAccent ? '#1560FF' : '#343A40'}
-                      strokeWidth={isAccent ? 11 : 1}
-                    />
-                  );
-                })}
-              </svg>
-            );
-          })()}
-        </div>
+        <Image src="/top.png" width={1152} height={101} alt="top" className="mx-auto" />
 
         <div className="border-medium-gray bg-card mx-auto flex w-full max-w-6xl flex-col border lg:flex-row">
-          <div className="flex w-full flex-col gap-8 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
-            <div className="text-4.5xl text-primary max-w-xl">
+          <div className="flex w-full flex-col gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
+            <div className="sm:text-4.5xl text-primary max-w-xl text-3xl">
               <span className="text-black">
                 Scale delivery operations without compromising
               </span>{" "}
               trust or efficiency.
             </div>
           </div>
-          <div className="mx-auto flex items-center justify-center">
-            <div className="flex flex-col items-stretch justify-start gap-3 sm:flex-row sm:items-center sm:gap-2">
-              <button className="rounded-full border bg-black px-4 py-1.5 font-medium text-white sm:px-3 sm:py-2">
+          <div className="mx-auto flex items-center justify-center px-6 pb-8 lg:px-0 lg:pb-0">
+            <div className="flex items-stretch justify-start gap-3 sm:items-center sm:gap-2">
+              <button className="rounded-full border bg-black px-4 py-2 font-medium text-white sm:px-3 sm:py-2">
                 Visit Docs
               </button>
               <button className="rounded-full border border-gray-300 bg-transparent px-4 py-3 font-medium text-black sm:px-3 sm:py-2">
@@ -59,45 +31,17 @@ export default function Footer() {
           </div>
         </div>
         {/* Decorative bar below */}
-        <div className="flex justify-center">
-          {(() => {
-            const width = 1152;
-            const height = 101;
-            const columns = 24; // 48px grid
-            const gap = width / columns;
-            const accentIndices = new Set([8, 9, 22]);
-            return (
-              <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-                {Array.from({ length: columns + 1 }, (_, i) => {
-                  const x = Math.round(i * gap) + 0.5;
-                  const isAccent = accentIndices.has(i);
-                  return (
-                    <line
-                      key={i}
-                      opacity={0.1}
-                      x1={x}
-                      y1={0.818359}
-                      x2={x}
-                      y2={100.818}
-                      stroke={isAccent ? '#1560FF' : '#343A40'}
-                      strokeWidth={isAccent ? 11 : 1}
-                    />
-                  );
-                })}
-              </svg>
-            );
-          })()}
-        </div>
+        <Image src="/bottom.png" width={1152} height={101} alt="bottom" className="mx-auto" />
       </section>
 
       {/* Navigation Links */}
-      <section className="border-x-medium-gray mx-auto max-w-6xl border border-y-0 py-16">
+      <section className="border-x-medium-gray mx-auto max-w-6xl border border-y-0 py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap items-start justify-between gap-10">
             {/* Products */}
 
             <div className="flex flex-col gap-4">
-              <Image src="./Logo.svg" width={180} height={44} alt="Logo" />
+              <Image src="/Logo.svg" width={180} height={44} alt="Logo" />
 
               <div className="font-geist-mono w-full max-w-40 text-sm text-[#939290]">
                 33 West 17th Street New York, 10011 United States

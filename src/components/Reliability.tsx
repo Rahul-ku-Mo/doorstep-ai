@@ -5,14 +5,14 @@ import Image from "next/image";
 export default function Reliability() {
   return (
     <section className="border-x-medium-gray mx-auto flex w-full max-w-6xl flex-col border border-y-0 border-zinc-800">
-      <div className="flex justify-between p-6 sm:p-8 lg:p-12 lg:pr-0 lg:pb-0">
+      <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:p-12 lg:pr-0 lg:pb-0">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start gap-2">
             <div className="decoration-medium-gray flex items-center gap-1 underline decoration-dashed underline-offset-4">
               <div className="bg-primary size-3" />
               <span className="text-sm text-[#666666]/60">Reliability</span>
             </div>
-            <h2 className="text-4.5xl text-black">
+            <h2 className="text-3xl sm:text-4.5xl text-black">
               Built on strong <span className="text-primary">foundations</span>{" "}
               for
             </h2>
@@ -73,15 +73,15 @@ export default function Reliability() {
         <div className="bg-transparent">
           <Image
             src="/reliability.png"
-            width={500}
-            height={500}
+            width={600}
+            height={480}
             alt="Reliablity"
-            className="h-auto w-full"
+            className="h-auto w-full max-w-xl lg:max-w-none"
           />
         </div>
       </div>
 
-      <div className="h-full w-full p-12 text-center text-black">
+      <div className="h-full w-full px-6 py-10 text-center text-black sm:p-12">
         Backed by research by PhD team from MIT — 30+ indoor-nav patents & 50+
         publications.
       </div>

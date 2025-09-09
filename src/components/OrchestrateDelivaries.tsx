@@ -7,7 +7,7 @@ export default function OrchestrateDelivaries() {
   return (
     <section className="border-x-medium-gray mx-auto w-full max-w-6xl border border-y-0">
       {/* Header */}
-      <div className="border-y-medium-gray flex items-center justify-start gap-6 border border-x-0 p-6 sm:p-8 lg:p-12">
+      <div className="border-y-medium-gray flex flex-col items-start justify-start gap-4 border border-x-0 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12">
         <div className="max-w-xl">
           <div className="decoration-medium-gray mb-2 flex items-center gap-2 underline decoration-dashed underline-offset-4">
             <div className="bg-primary size-2" />
@@ -20,14 +20,14 @@ export default function OrchestrateDelivaries() {
             claim with clarity
           </h2>
         </div>
-        <div className="max-w-md text-lg text-[#666666]">
+        <div className="max-w-md text-base text-[#666666] sm:text-lg">
           <p>Tracking stops at the curb.</p>
           <p>Refunds pile up without proof inside the building.</p>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-4 px-6 py-4 sm:px-8 lg:px-12">
+      <div className="flex flex-wrap items-center gap-3 px-6 py-4 sm:px-8 lg:px-12">
         <button className="bg-primary rounded-full px-4 py-2 text-white shadow-sm">
           Entrance
         </button>
@@ -48,7 +48,7 @@ export default function OrchestrateDelivaries() {
               className="h-auto w-full rounded"
             />
             {/* Floating notification card */}
-            <div className="border-primary absolute top-24 left-2/3 z-10 w-[360px] -translate-x-1/2 rounded-md border bg-white/90 p-4 shadow-sm backdrop-blur">
+            <div className="border-primary absolute top-6 right-2 z-10 w-[260px] sm:top-10 sm:right-6 sm:w-[300px] md:w-[340px] lg:top-24 lg:left-2/3 lg:right-auto lg:w-[360px] lg:-translate-x-1/2 rounded-md border bg-white/90 p-3 sm:p-4 shadow-sm backdrop-blur">
               <div className="flex items-start justify-between gap-3">
                 <div className="border-accent bg-primary size-8 rounded-full border flex items-center justify-center">
                   <DoorClosed className="size-4.5 text-white" />
@@ -73,7 +73,7 @@ export default function OrchestrateDelivaries() {
 
         {/* Right: checklist */}
         <div className="w-full lg:w-1/2">
-          <h3 className="mb-2 text-2xl font-medium text-black">
+          <h3 className="mb-2 text-xl sm:text-2xl font-medium text-black">
             Verified building Entry
           </h3>
           <p className="mb-4 text-[#666666]">

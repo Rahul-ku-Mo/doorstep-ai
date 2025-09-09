@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle, Square, AlertTriangle, TrendingUp } from "lucide-react";
+import { Square, AlertTriangle, TrendingUp } from "lucide-react";
 
 export default function TheChallenge() {
   return (
     <>
-      <section className="border-medium-gray relative z-10 mx-auto w-full max-w-6xl border pt-20">
+      <section className="border-medium-gray relative z-10 mx-auto w-full max-w-6xl border pt-12 sm:pt-16 lg:pt-20">
         <svg
           className="absolute -top-2 -left-[8.5px] z-50 size-4 text-black"
           viewBox="0 0 24 24"
@@ -29,13 +29,13 @@ export default function TheChallenge() {
         </svg>
 
         {/* Header */}
-        <div className="flex items-start justify-between gap-6 p-6 sm:p-8 lg:p-12 lg:pb-20">
-          <div className="max-w-md">
+        <div className="flex flex-col items-start justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pb-20">
+          <div className="max-w-xl">
             <div className="decoration-medium-gray mb-2 flex items-center gap-2 underline decoration-dashed underline-offset-4">
               <div className="bg-primary size-2" />
               <span className="text-sm text-[#666666]/60">The Challenge</span>
             </div>
-            <h2 className="text-4.5xl text-black">
+            <h2 className="sm:text-4.5xl text-3xl text-black">
               The problem with <br />
               <span className="text-primary">last-mile delivery</span>
             </h2>
@@ -49,7 +49,7 @@ export default function TheChallenge() {
               </p>
             </div>
 
-            <div className="mt-4 grid flex-1 grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
+            <div className="mt-4 grid flex-1 grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
               <Bullet
                 icon={<Square className="size-4 text-black" />}
                 label="No in-building proof"
@@ -70,60 +70,32 @@ export default function TheChallenge() {
           </div>
 
           {/* Right side image + badge */}
-          <div className="relative hidden w-full max-w-lg flex-1 items-start justify-end lg:flex">
+          <div className="relative w-full max-w-lg flex-1 items-start justify-end lg:flex">
             <Image
               src="/the-challenge.svg"
               alt="Refund and support flow"
               width={640}
               height={480}
-              className="relative z-10 h-auto w-full rounded"
+              className="relative z-10 hidden h-auto w-full rounded lg:block"
             />
           </div>
         </div>
 
         {/* stats */}
-        <div className="absolute bottom-0 flex flex-col gap-8 px-6 pb-10 sm:px-8 lg:flex-row lg:px-12 lg:pb-20">
-          <div className="flex flex-1 items-end justify-start gap-12">
+        <div className="relative bottom-0 flex flex-col gap-6 px-6 pb-8 sm:px-8 lg:absolute lg:flex-row lg:px-12 lg:pb-20">
+          <div className="flex flex-1 items-end justify-start gap-8 sm:gap-12">
             <Stat value="40%" caption="POD photos lack context" />
             <Stat value="2x" caption="Refunds without visibility" />
           </div>
         </div>
       </section>
-      <div className="flex justify-center">
-        {(() => {
-          const width = 1152;
-          const height = 101;
-          const columns = 24; // 48px grid across width
-          const gap = width / columns; // 48
-          const accentIndices = new Set([1, 2, 18, 19]);
-          return (
-            <svg
-              width={width}
-              height={height}
-              viewBox={`0 0 ${width} ${height}`}
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {Array.from({ length: columns + 1 }, (_, i) => {
-                const x = Math.round(i * gap) + 0.5;
-                const isAccent = accentIndices.has(i);
-                return (
-                  <line
-                    key={i}
-                    opacity={0.1}
-                    x1={x}
-                    y1={0.818359}
-                    x2={x}
-                    y2={100.818}
-                    stroke={isAccent ? "#1560FF" : "#343A40"}
-                    strokeWidth={isAccent ? 11 : 1}
-                  />
-                );
-              })}
-            </svg>
-          );
-        })()}
-      </div>
+      <Image
+        src="/challenge.png"
+        width={1152}
+        height={101}
+        alt="challenge-bars"
+        className="mx-auto"
+      />
     </>
   );
 }
