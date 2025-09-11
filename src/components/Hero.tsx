@@ -56,10 +56,20 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-24 sm:pt-28">
       {/* Hero Content */}
       <div className="border-medium-gray relative mx-auto max-w-7xl border border-x px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-56">
-        <div className="relative z-20 mx-auto max-w-2xl text-center">
+        <motion.div 
+          className="relative z-20 mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="absolute inset-0 z-10 bg-[#fafafa]/60 hidden sm:block p-4"></div>
           {/* Main Heading */}
-          <h1 className="relative z-20 mb-2 text-2xl font-medium text-black sm:text-4xl lg:max-w-2xl lg:text-5xl">
+          <motion.h1 
+            className="relative z-20 mb-2 text-2xl font-medium text-black sm:text-4xl lg:max-w-2xl lg:text-5xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             Delivery accuracy, down to
             <div className="inline-flex justify-center gap-2">
               <span className="w-fit text-left">the exact door for</span>
@@ -80,12 +90,17 @@ export default function Hero() {
                 </motion.span>
               </AnimatePresence>
             </div>
-          </h1>
+          </motion.h1>
 
-          <p className="relative z-20 mx-auto my-2 max-w-2xl px-4 text-base text-[#939280] sm:my-4 sm:px-0 sm:text-base lg:text-xl">
+          <motion.p 
+            className="relative z-20 mx-auto my-2 max-w-2xl px-4 text-base text-[#939280] sm:my-4 sm:px-0 sm:text-base lg:text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Tools that bring precision to the final stretch of delivery.
             Eliminate confusion, reduce refunds, and deliver with confidence.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
@@ -142,7 +157,7 @@ export default function Hero() {
               </motion.span>
             </motion.button>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Grid Overlay */}
         <div className="pointer-events-none absolute inset-0 hidden md:block">

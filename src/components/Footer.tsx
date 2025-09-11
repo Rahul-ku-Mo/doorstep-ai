@@ -35,8 +35,8 @@ export default function Footer() {
           <div className="flex items-center justify-center px-6 pb-8 lg:px-0 lg:pb-0 lg:mx-auto">
             <motion.div
               className="flex items-center justify-start gap-2 sm:gap-4"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0,  }}
+              whileInView={{ opacity: 1, }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
