@@ -8,9 +8,9 @@ export default function Footer() {
       {/* Main CTA Section */}
       <section className="border-medium-gray w-full border">
         {/* Decorative bar above */}
-        <Image src="/top.png" width={1152} height={101} alt="top" className="mx-auto" />
+        <Image src="/top.svg" width={1280} height={101} alt="top" className="mx-auto" />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-6xl flex-col border lg:flex-row">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-7xl flex-col border lg:flex-row">
           <div className="flex w-full flex-col gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
             <div className="sm:text-4.5xl text-primary max-w-xl text-3xl">
               <span className="text-black">
@@ -31,12 +31,12 @@ export default function Footer() {
           </div>
         </div>
         {/* Decorative bar below */}
-        <Image src="/bottom.png" width={1152} height={101} alt="bottom" className="mx-auto" />
+        <Image src="/bottom.svg" width={1280} height={101} alt="bottom" className="mx-auto" />
       </section>
 
       {/* Navigation Links */}
-      <section className="border-x-medium-gray mx-auto max-w-6xl border border-y-0 py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-start justify-between gap-10">
             {/* Products */}
 
@@ -110,7 +110,7 @@ export default function Footer() {
       </section>
 
       {/* Bottom Bar */}
-      <section className="border-medium-gray font-geist-mono mx-auto max-w-6xl border pt-6 pb-3 text-center text-[#939290]">
+      <section className="border-medium-gray font-geist-mono mx-auto max-w-7xl border pt-6 pb-3 text-center text-[#939290]">
         © 2025 doorstep.ai. All rights reserved.
       </section>
     </footer>

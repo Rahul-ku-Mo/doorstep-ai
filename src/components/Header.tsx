@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function Header() {
   return (
     <header className="fixed top-0 right-0 left-0 z-50">
-      <div className="border-x-medium-gray mx-auto max-w-6xl border border-y-0 px-4 pt-2 pb-10 sm:px-6 lg:px-8">
+      <div className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-10 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between sm:h-16">
           {/* Logo */}
           <div className="flex items-center">

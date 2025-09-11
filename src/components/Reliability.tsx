@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Reliability() {
   return (
-    <section className="border-x-medium-gray mx-auto flex w-full max-w-6xl flex-col border border-y-0 border-zinc-800">
-      <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:p-12 lg:pr-0 lg:pb-0">
+    <section className="border-x-medium-gray mx-auto flex w-full max-w-7xl flex-col border border-y-0 border-zinc-800">
+      <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:p-12 lg:pr-0 lg:pb-0 lg:pt-20">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start gap-2">
             <div className="decoration-medium-gray flex items-center gap-1 underline decoration-dashed underline-offset-4">

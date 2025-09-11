@@ -1,10 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-
+import TheChallenge from "@/components/TheProblem";
+import TheSolution from "@/components/TheSolution";
 import Reliability from "@/components/Reliability";
 import OrchestrateDelivaries from "@/components/OrchestrateDelivaries";
-import TheChallenge from "@/components/TheChallenge";
-
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,6 +12,7 @@ export default function Home() {
       <Header />
       <Hero />
       <TheChallenge />
+      <TheSolution />
       <OrchestrateDelivaries />
       <Reliability />
       <Footer />
