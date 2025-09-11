@@ -84,7 +84,7 @@ export default function OrchestrateDelivaries() {
   };
 
   return (
-    <section className="border-x-medium-gray mx-auto w-full max-w-7xl border border-y-0 bg-card">
+    <section className="border-x-medium-gray bg-card mx-auto w-full max-w-7xl border border-y-0">
       {/* Header */}
       <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
         <div className="max-w-xl">
@@ -94,7 +94,7 @@ export default function OrchestrateDelivaries() {
               Orchestrate Deliveries
             </span>
           </div>
-          <h2 className="text-4.5xl max-w-md text-black">
+          <h2 className="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl">
             <span className="text-primary">Trace</span> and investigate every
             claim with clarity
           </h2>
@@ -106,13 +106,13 @@ export default function OrchestrateDelivaries() {
       </div>
 
       {/* Animated Tabs */}
-      <div className="relative flex items-start gap-36 px-6 py-4 sm:px-8 lg:px-12">
-        <div className="">
+      <div className="relative flex flex-col items-start gap-8 px-4 py-4 sm:px-6 md:px-8 lg:flex-row lg:gap-36 lg:px-12">
+        <div className="flex flex-row gap-2 overflow-x-auto lg:w-auto lg:flex-col lg:gap-0">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
               onClick={() => handleSectionClick(index)}
-              className={`font-geist-mono relative mb-2 flex items-center gap-2 py-2 uppercase ${
+              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 whitespace-nowrap uppercase transition-all duration-200 sm:mb-2 ${
                 activeSection === index
                   ? "text-black"
                   : "hover:text-primary text-[#666666]/60"
@@ -147,7 +147,7 @@ export default function OrchestrateDelivaries() {
           ))}
         </div>
 
-        <div className="relative flex-1">
+        <div className="relative mt-6 flex w-full flex-1 justify-center lg:mt-0 lg:w-auto lg:justify-start">
           <motion.div
             key={activeSection}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -160,7 +160,8 @@ export default function OrchestrateDelivaries() {
               alt="Building schematic"
               width={578}
               height={578}
-              className="h-auto w-full rounded"
+              className="h-auto w-full max-w-xs rounded sm:max-w-sm lg:max-w-none"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 578px"
             />
           </motion.div>
         </div>

@@ -57,13 +57,12 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="border-medium-gray relative mx-auto max-w-7xl border border-x px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-56">
         <div className="relative z-20 mx-auto max-w-2xl text-center">
-          <div className="absolute inset-0 z-10 bg-[#fafafa]/60"></div>
+          <div className="absolute inset-0 z-10 bg-[#fafafa]/60 hidden sm:block p-4"></div>
           {/* Main Heading */}
-          <h1 className="relative z-20 mb-2 text-3xl font-medium text-black sm:text-4xl lg:text-5xl max-w-2xl mx-auto">
+          <h1 className="relative z-20 mb-2 text-2xl font-medium text-black sm:text-4xl lg:max-w-2xl lg:text-5xl">
             Delivery accuracy, down to
-            <br />
-            <div className="flex gap-2 justify-center w-full">
-              <span className="text-left">the exact door for</span>
+            <div className="inline-flex justify-center gap-2">
+              <span className="w-fit text-left">the exact door for</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWordIndex}
@@ -75,42 +74,72 @@ export default function Hero() {
                     duration: 0.3,
                     ease: [0.4, 0.0, 0.2, 1],
                   }}
-                  className="text-blue-600 self-start text-left"
+                  className="self-start text-left text-blue-600"
                 >
-          
                   {words[currentWordIndex]}
                 </motion.span>
               </AnimatePresence>
             </div>
           </h1>
 
-          <p className="relative z-20 mx-auto my-6 max-w-2xl px-4 text-base text-gray-600 sm:my-8 sm:px-0 sm:text-base lg:text-xl">
+          <p className="relative z-20 mx-auto my-2 max-w-2xl px-4 text-base text-[#939280] sm:my-4 sm:px-0 sm:text-base lg:text-xl">
             Tools that bring precision to the final stretch of delivery.
             Eliminate confusion, reduce refunds, and deliver with confidence.
           </p>
 
           {/* CTA Buttons */}
-          <motion.div className="relative z-20 flex flex-wrap items-center justify-center gap-4 px-4">
+          <motion.div
+            className="relative z-20 flex items-center justify-center gap-2 px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <motion.button
-              className="group relative inline-flex w-fit cursor-pointer items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-base font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-xl"
-              whileHover={{ scale: 1.05, x: -2 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
+              className="group relative inline-flex cursor-pointer items-center justify-center rounded-full border border-blue-600 bg-blue-600 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white shadow-lg transition-all duration-300 hover:border-blue-700 hover:bg-blue-700 hover:shadow-xl whitespace-nowrap"
+              whileHover={{
+                scale: 1.05,
+                y: -2,
+                boxShadow:
+                  "0 20px 25px -5px rgba(59, 130, 246, 0.3), 0 10px 10px -5px rgba(59, 130, 246, 0.04)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
             >
-              <span className="hidden sm:inline">Book a Demo</span>
-              <span className="sm:hidden">Demo</span>
+              <motion.span
+                className="relative flex items-center gap-1"
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <span className="hidden sm:inline">See the Dashboard</span>
+                <span className="sm:hidden">See the Dashboard</span>
+              </motion.span>
             </motion.button>
 
             <motion.button
-              className="flex items-center justify-center rounded-full px-4 py-2 text-base font-medium transition-all duration-200 hover:text-blue-600"
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
+              className="group relative inline-flex items-center justify-center rounded-full border border-gray-200 bg-white/80 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 whitespace-nowrap"
+              whileHover={{
+                scale: 1.05,
+                y: -1,
+                boxShadow:
+                  "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
             >
-              Explore AI Agents
-              <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
-                <ChevronRightIcon className="ml-1 h-4 w-4" />
-              </motion.div>
+              <motion.span
+                className="flex items-center gap-1"
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
+                <span className="hidden sm:inline">SDK Docs</span>
+                <span className="sm:hidden">SDK Docs</span>
+                <motion.div
+                  whileHover={{ x: 3, rotate: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4 transition-colors duration-200 group-hover:text-blue-600" />
+                </motion.div>
+              </motion.span>
             </motion.button>
           </motion.div>
         </div>
@@ -154,13 +183,17 @@ export default function Hero() {
       </div>
 
       {/* Background Image */}
-      <Image
-        src="/Hero.png"
-        fill={true}
-        alt="Hero"
-        className="object-contain md:object-cover"
-      />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#fafafa]/20 to-[#fafafa]"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/Hero.png"
+          fill={true}
+          alt="Hero"
+          className="object-cover object-center md:object-cover lg:object-center "
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, (max-width: 1280px) 100vw, 100vw"
+          priority
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#fafafa]/10 to-[#fafafa] sm:via-[#fafafa]/15 md:via-[#fafafa]/20"></div>
     </section>
   );
 }
