@@ -3,11 +3,11 @@
 import { DoorClosed, ArrowUp, Package } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { Container, SectionHeader } from "./shared";
 
 export default function OrchestrateDelivaries() {
   const [activeSection, setActiveSection] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const sections = [
     {
@@ -65,41 +65,32 @@ export default function OrchestrateDelivaries() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setActiveSection((prev) => (prev + 1) % sections.length);
-        setIsAnimating(false);
-      }, 300);
+      setActiveSection((prev) => (prev + 1) % sections.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [sections.length]);
 
   const handleSectionClick = (index: number) => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setActiveSection(index);
-      setIsAnimating(false);
-    }, 300);
+    setActiveSection(index);
   };
 
   return (
-    <section className="border-x-medium-gray bg-card mx-auto w-full max-w-7xl border border-y-0">
+    <Container className="bg-card border-y-0">
       {/* Header */}
       <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
         <div className="max-w-xl">
-          <div className="decoration-medium-gray mb-2 flex items-center gap-2 underline decoration-dashed underline-offset-4">
-            <div className="bg-primary size-2" />
-            <span className="text-sm text-[#666666]/60">
-              Orchestrate Deliveries
-            </span>
-          </div>
-          <h2 className="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl">
-            <span className="text-primary">Trace</span> and investigate every
-            claim with clarity
-          </h2>
+          <SectionHeader
+            tag="Orchestrate Deliveries"
+            title={
+              <>
+                <span className="text-primary">Trace</span> and investigate every claim with clarity
+              </>
+            }
+            titleClassName="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl"
+          />
         </div>
-        <div className="max-w-md text-base text-[#939290] sm:text-lg">
+        <div className="max-w-xl text-base text-[#939290] sm:text-lg w-full">
           <p>Tracking stops at the curb.</p>
           <p>Refunds pile up without proof inside the building.</p>
         </div>
@@ -166,6 +157,6 @@ export default function OrchestrateDelivaries() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

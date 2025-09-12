@@ -2,33 +2,23 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { Container, SectionHeader } from "./shared";
 
 export default function Reliability() {
   return (
-    <section className="border-x-medium-gray mx-auto flex w-full max-w-7xl flex-col border border-y-0 border-zinc-800">
+    <Container className="flex flex-col border-y-0 border-zinc-800">
       <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:p-12 lg:pt-20 lg:pr-0 lg:pb-0">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start gap-2">
-            <motion.div
-              className="decoration-medium-gray flex items-center gap-1 underline decoration-dashed underline-offset-4"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="bg-primary size-3" />
-              <span className="text-sm text-[#666666]/60">Reliability</span>
-            </motion.div>
-            <motion.h2
-              className="sm:text-4.5xl text-3xl text-black"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Built on strong <span className="text-primary">foundations</span>{" "}
-              for
-            </motion.h2>
+            <SectionHeader
+              tag="Reliability"
+              title={
+                <>
+                  Built on strong <span className="text-primary">foundations</span> for
+                </>
+              }
+            />
             <motion.div
               className="flex items-center justify-start gap-3"
               initial={{ opacity: 0, y: 20 }}
@@ -99,6 +89,10 @@ export default function Reliability() {
               >
                 <Image src="./ios.svg" alt="ios" width={48} height={48} />
               </motion.div>
+              <div className="flex cursor-pointer items-center underline underline-offset-2 relative top-3 text-[#666666]">
+                SDK Documentation
+                <ArrowUpRight className="size-4" />
+              </div>
             </motion.div>
           </div>
 
@@ -142,7 +136,7 @@ export default function Reliability() {
                   </p>
                 </motion.div>
                 <motion.div
-                  className="border-t-medium-gray group flex cursor-pointer flex-col gap-2 border-t-2 py-5 sm:flex-row sm:items-start sm:justify-between"
+                  className="border-y-medium-gray group flex cursor-pointer flex-col gap-2 border-y-2 py-5 sm:flex-row sm:items-start sm:justify-between"
                   whileHover={{
                     x: 5,
                     backgroundColor: "rgba(248, 250, 252, 0.5)",
@@ -154,21 +148,6 @@ export default function Reliability() {
                   </div>
                   <p className="text-accent sm:w-2/3">
                     Evidence-backed data reduces false claims.
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="border-y-medium-gray group flex cursor-pointer flex-col gap-2 border-y-2 py-5 sm:flex-row sm:items-start sm:justify-between"
-                  whileHover={{
-                    x: 5,
-                    backgroundColor: "rgba(248, 250, 252, 0.5)",
-                  }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
-                    No hardware
-                  </div>
-                  <p className="text-accent sm:w-2/3">
-                    Simple setup, no extra hardware required.
                   </p>
                 </motion.div>
               </div>
@@ -210,6 +189,6 @@ export default function Reliability() {
           publications.
         </motion.p>
       </motion.div>
-    </section>
+    </Container>
   );
 }
