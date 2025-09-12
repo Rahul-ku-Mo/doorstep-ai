@@ -98,7 +98,7 @@ export default function OrchestrateDelivaries() {
 
       {/* Animated Tabs */}
       <div className="relative flex flex-col items-start gap-8 px-4 py-4 sm:px-6 md:px-8 lg:flex-row lg:gap-36 lg:px-12">
-        <div className="flex flex-row gap-2 overflow-x-auto lg:w-auto lg:flex-col lg:gap-0">
+        <div className="flex flex-row flex-wrap gap-2 overflow-x-auto lg:w-auto lg:flex-col lg:gap-0">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
