@@ -38,7 +38,7 @@ export default function Header() {
           {/* Right side buttons */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             <motion.button
-              className="border-border-gray group hidden items-center justify-center gap-1 rounded-full border border-x border-y-0 bg-white px-4 py-1.5 text-base text-black shadow-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-md md:flex"
+              className="border-border-gray group hidden h-10 items-center justify-center gap-1 rounded-full border border-x border-y-0 bg-white px-4 py-1.5 text-base text-black shadow-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-md md:flex"
               whileHover={{
                 scale: 1.05,
                 y: -1,
@@ -63,7 +63,7 @@ export default function Header() {
             </motion.button>
 
             <motion.button
-              className="rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-lg sm:px-4 sm:py-2 sm:text-[15px]"
+              className="h-10 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-lg sm:px-4 sm:py-2 sm:text-[15px]"
               whileHover={{
                 scale: 1.05,
                 y: -2,

@@ -41,7 +41,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.button
-                className="rounded-full border border-black bg-black px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-xl whitespace-nowrap"
+                className="h-10 rounded-full flex items-center border border-black bg-black px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-xl whitespace-nowrap"
                 whileHover={{
                   scale: 1.05,
                   y: -2,
@@ -58,7 +58,7 @@ export default function Footer() {
                 </motion.span>
               </motion.button>
               <motion.button
-                className="rounded-full border border-gray-300 bg-white/80 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-black backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-lg whitespace-nowrap"
+                className="h-10 rounded-full flex items-center border border-gray-300 bg-white/80 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-black backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-lg whitespace-nowrap"
                 whileHover={{
                   scale: 1.05,
                   y: -1,

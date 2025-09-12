@@ -7,7 +7,7 @@ import { Container, SectionHeader } from "./shared";
 
 export default function Reliability() {
   return (
-    <Container className="flex flex-col border-y-0 border-zinc-800">
+    <Container className="flex flex-col border-y-0 border-medium-gray">
       <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:p-12 lg:pt-20 lg:pr-0 lg:pb-0">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start gap-2">
@@ -163,11 +163,11 @@ export default function Reliability() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Image
-            src="/reliability.png"
+            src="/reliability.svg"
             width={600}
             height={480}
             alt="Reliability"
-            className="h-auto w-full max-w-xl lg:max-w-none"
+            className="h-auto w-full max-w-xl lg:max-w-none object-contain"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
           />
         </motion.div>
