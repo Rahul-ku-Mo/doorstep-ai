@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "./shared";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,45 +56,14 @@ export default function Header() {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <motion.button
-              className="border-border-gray group hidden h-10 items-center justify-center gap-1 rounded-full border border-x border-y-0 bg-white px-4 py-1.5 text-base text-black shadow-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-md md:flex"
-              whileHover={{
-                scale: 1.05,
-                y: -1,
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-            >
-              <motion.span
-                className="flex items-center gap-1"
-                whileHover={{ x: 2 }}
-                transition={{ duration: 0.2 }}
-              >
-                SDK Documentation
-                <motion.div
-                  whileHover={{ rotate: 45, scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ArrowUpRight className="size-4.5 transition-colors duration-200 group-hover:text-blue-600" />
-                </motion.div>
-              </motion.span>
-            </motion.button>
+            <Button variant="outline">
+              SDK Documentation
+              <ArrowUpRight className="size-4"/>
+            </Button>
 
-            <motion.button
-              className="h-10 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-lg sm:px-4 sm:py-2 sm:text-[15px]"
-              whileHover={{
-                scale: 1.05,
-                y: -2,
-                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
-            >
-              <motion.span whileHover={{ x: 1 }} transition={{ duration: 0.2 }}>
-                Get a Demo
-              </motion.span>
-            </motion.button>
+           <Button variant="ghost">
+            Get a Demo
+           </Button>
 
             {/* Mobile menu button */}
           </div>

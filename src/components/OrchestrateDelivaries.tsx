@@ -78,7 +78,7 @@ export default function OrchestrateDelivaries() {
   return (
     <Container className="border-y-0">
       {/* Header */}
-      <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
+      <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-4 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
         <div className="max-w-xl">
           <SectionHeader
             tag="Orchestrate Deliveries"
@@ -90,7 +90,7 @@ export default function OrchestrateDelivaries() {
             titleClassName="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl"
           />
         </div>
-        <div className="max-w-xl text-base text-accent sm:text-lg w-full">
+        <div className="max-w-sm text-base text-accent sm:text-lg w-full">
           <p>Tracking stops at the curb.</p>
           <p>Refunds pile up without proof inside the building.</p>
         </div>

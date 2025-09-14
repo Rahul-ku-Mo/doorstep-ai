@@ -57,7 +57,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Tools that bring precision to the final stretch of delivery. <br />
+            Tools that bring precision to the final stretch of delivery.
             Eliminate confusion, reduce refunds, and deliver with confidence.
           </motion.p>
 

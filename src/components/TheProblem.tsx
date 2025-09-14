@@ -9,16 +9,16 @@ export default function TheProblem() {
     <>
       <Container className="relative z-10 border-t-0" hasCornerPlus={true}>
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pt-20">
+        <div className="flex flex-col items-start justify-between gap-8 p-4 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pt-20">
           <SectionHeader
             tag="The Challenge"
             title={
               <>
-                The <span className="text-primary">problem</span> with last-mile
-                delivery
+                Unreliable GPS. Failed PODs.{" "}
+                <span className="text-primary">Endless</span> disputes. delivery
               </>
             }
-            description="Beyond the doorstep, visibility ends — making it easy for false claims to slip through and cost providers billions."
+            description="GPS is a black box indoors, and POD photos don’t tell the full story - leaving claims to pile up."
             layout="row"
           />
         </div>
@@ -52,7 +52,7 @@ export default function TheProblem() {
             priority
           />
 
-          <div className="flex flex-col text-base font-medium sm:hidden max-w-sm mx-auto pb-4">
+          <div className="mx-auto flex max-w-sm flex-col p-4 text-base font-medium sm:hidden">
             <div className="text-black">
               Fraud hides in delivery blind spots
             </div>

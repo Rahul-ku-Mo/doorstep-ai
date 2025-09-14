@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Button } from "./shared";
 
 export default function Footer() {
   return (
@@ -40,40 +41,12 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <motion.button
-                className="h-10 rounded-full flex items-center border border-black bg-black px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:border-gray-800 hover:bg-gray-800 hover:shadow-xl whitespace-nowrap"
-                whileHover={{
-                  scale: 1.05,
-                  y: -2,
-                  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
-                }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
-              >
-                <motion.span
-                  whileHover={{ x: 2 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Visit Docs
-                </motion.span>
-              </motion.button>
-              <motion.button
-                className="h-10 rounded-full flex items-center border border-gray-300 bg-white/80 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-black backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-lg whitespace-nowrap"
-                whileHover={{
-                  scale: 1.05,
-                  y: -1,
-                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
-                }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
-              >
-                <motion.span
-                  whileHover={{ x: 2 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Talk to an Expert
-                </motion.span>
-              </motion.button>
+              <Button variant="ghost">
+                Visit Docs
+              </Button>
+              <Button variant="outline">
+                Talk to an Expert
+              </Button>
             </motion.div>
           </div>
         </div>

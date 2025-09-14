@@ -37,7 +37,7 @@ export default function TheSolution() {
     <>
       <Container className="relative z-10 border-y-0 pt-12 sm:pt-16 lg:pt-20">
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-8 p-6 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pb-12">
+        <div className="flex flex-col items-start justify-between gap-8 p-4 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pb-12">
           <SectionHeader
             tag="The Solution"
             title={
@@ -52,7 +52,7 @@ export default function TheSolution() {
         </div>
 
         <motion.div
-          className="relative overflow-hidden px-12"
+          className="relative overflow-hidden px-4 sm:px-12"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -73,17 +73,16 @@ export default function TheSolution() {
             </div>
 
             {/* Mobile Image - Hidden on desktop/tablet */}
-            <div className="block sm:hidden">
-              <Image
-                src="/the-solution-phone.svg"
-                alt="Solution Mobile"
-                width={1280}
-                height={720}
-                className="h-auto w-full"
-                sizes="100vw"
-                priority
-              />
-            </div>
+            <Image
+              src="/the-solution-phone.svg"
+              alt="Solution Mobile"
+              width={1280}
+              height={720}
+              className="block h-auto w-full object-cover sm:hidden"
+              sizes="100vw"
+              priority
+            />
+
             {/* Interactive Hotspots Overlay - Only on desktop/tablet */}
             <div className="absolute inset-0 hidden sm:block">
               {tooltipData.map((tooltip) => (
@@ -125,7 +124,7 @@ export default function TheSolution() {
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="rounded-md border border-medium-gray bg-white p-4 shadow-xl">
+                        <div className="border-medium-gray rounded-md border bg-white p-4 shadow-xl">
                           <div className="flex items-center space-x-3">
                             <Image
                               src={tooltip.icon}
@@ -137,7 +136,7 @@ export default function TheSolution() {
                               <p className="text-primary text-sm font-medium">
                                 {tooltip.title}
                               </p>
-                              <p className="font-geist-mono mt-1 text-xs text-accent">
+                              <p className="font-geist-mono text-accent mt-1 text-xs">
                                 {tooltip.timestamp}
                               </p>
                             </div>
