@@ -89,6 +89,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #fafafa;
+  overflow-x: hidden;
 }
 
 /* Responsive helpers */
