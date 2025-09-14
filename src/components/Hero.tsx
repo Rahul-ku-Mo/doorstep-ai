@@ -60,7 +60,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 hidden h-full w-full md:flex lg:hidden">
           <Image
-            src="/tags.svg"
+            src="/Tags.svg"
             alt="tags"
             fill={true}
             className="object-cover"
