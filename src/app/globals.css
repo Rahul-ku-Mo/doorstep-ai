@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+html {
+  font-size: calc(0.625rem + 0.42vw);
+}
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
 @theme {
   /* Tailwind v4 design tokens for custom colors */
   --color-primary: #1560ff;
