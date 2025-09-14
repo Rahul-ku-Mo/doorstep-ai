@@ -1,7 +1,7 @@
 "use client";
 
-
 import { ReactNode } from "react";
+import clsx from "clsx";
 
 interface ButtonProps {
   children: ReactNode;
@@ -12,13 +12,14 @@ interface ButtonProps {
   disabled?: boolean;
   icon?: ReactNode;
   iconPosition?: "left" | "right";
+  hidden?: boolean;
 }
 
 const buttonVariants = {
   primary: "border border-blue-600 bg-blue-600 text-white shadow-lg hover:border-blue-700 hover:bg-blue-700 hover:shadow-xl",
   secondary: "border border-gray-200 bg-white/80 text-black backdrop-blur-sm hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600",
   outline: "border border-gray-300 bg-transparent text-gray-700 hover:border-gray-400 hover:bg-gray-50",
-  ghost: "border border-gray-300 bg-black text-white hover:bg-[#000000] "
+  ghost: "border border-gray-300 bg-black text-white hover:bg-[#000000]"
 };
 
 const sizeVariants = {
@@ -35,16 +36,23 @@ export default function Button({
   onClick,
   disabled = false,
   icon,
-  iconPosition = "right"
+  iconPosition = "right",
+  hidden = false
 }: ButtonProps) {
   const baseClasses = "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-medium whitespace-nowrap transition-all ease-linear";
-  const variantClasses = buttonVariants[variant];
-  const sizeClasses = sizeVariants[size];
-
-
+  
   return (
     <button
-      className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={clsx(
+        baseClasses,
+        buttonVariants[variant],
+        sizeVariants[size],
+        {
+          'opacity-50 cursor-not-allowed': disabled,
+          'hidden': hidden
+        },
+        className
+      )}
       onClick={onClick}
       disabled={disabled}
     >

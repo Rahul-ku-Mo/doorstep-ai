@@ -20,9 +20,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50">
-      <motion.div 
-        className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8"
+    <header className="fixed top-0 right-0 left-0 z-50 ">
+      <motion.div
+        className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8 h-[52px]"
         animate={{
           backgroundColor: isScrolled ? "#fafafa" : "transparent",
         }}
@@ -56,16 +56,14 @@ export default function Header() {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <Button variant="outline">
+            <Button variant="outline" className="hidden sm:flex">
               SDK Documentation
-              <ArrowUpRight className="size-4"/>
+              <ArrowUpRight className="size-4" />
             </Button>
+            
 
-           <Button variant="ghost">
-            Get a Demo
-           </Button>
-
-            {/* Mobile menu button */}
+            <Button variant="ghost">Get a Demo</Button>
+        
           </div>
         </div>
       </motion.div>
