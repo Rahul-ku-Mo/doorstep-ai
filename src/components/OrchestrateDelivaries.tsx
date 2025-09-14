@@ -76,7 +76,7 @@ export default function OrchestrateDelivaries() {
   };
 
   return (
-    <Container className="bg-card border-y-0">
+    <Container className="border-y-0">
       {/* Header */}
       <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
         <div className="max-w-xl">
@@ -90,7 +90,7 @@ export default function OrchestrateDelivaries() {
             titleClassName="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl"
           />
         </div>
-        <div className="max-w-xl text-base text-[#939290] sm:text-lg w-full">
+        <div className="max-w-xl text-base text-accent sm:text-lg w-full">
           <p>Tracking stops at the curb.</p>
           <p>Refunds pile up without proof inside the building.</p>
         </div>
@@ -98,12 +98,12 @@ export default function OrchestrateDelivaries() {
 
       {/* Animated Tabs */}
       <div className="relative flex flex-col items-start gap-8 px-4 py-4 sm:px-6 md:px-8 lg:flex-row lg:gap-36 lg:px-12">
-        <div className="flex flex-row flex-wrap gap-2 overflow-x-auto lg:w-auto lg:flex-col lg:gap-0">
+        <div className="flex flex-row flex-wrap gap-2 lg:w-auto lg:flex-col lg:gap-0">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
               onClick={() => handleSectionClick(index)}
-              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 whitespace-nowrap uppercase transition-all duration-200 sm:mb-2 ${
+              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 whitespace-nowrap uppercase transition-all duration-200 ${
                 activeSection === index
                   ? "text-black"
                   : "hover:text-primary text-[#666666]/60"

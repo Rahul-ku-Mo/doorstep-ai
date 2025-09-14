@@ -2,16 +2,16 @@
 
 @theme {
   /* Tailwind v4 design tokens for custom colors */
-  --color-primary: #1560FF;
-  --color-secondary: #DEE9F4;
+  --color-primary: #1560ff;
+  --color-secondary: #dee9f4;
   --color-black: #212529;
   --color-card: #ffffff;
   --color-border-gray: #f1f3f5;
   --color-medium-gray: #eaebeb;
-  --color-success: #1560FF;
-  --color-info: #CED4DA;
-  --color-warning: #FFC961;
-  --color-error: #CFF7D3;
+  --color-success: #1560ff;
+  --color-info: #ced4da;
+  --color-warning: #ffc961;
+  --color-error: #cff7d3;
   --color-accent: #939290;
 
   --color-background: #fafafa;
@@ -29,11 +29,24 @@
   --text-5_5xl--line-height: 1.1;
   --text-5_5xl--letter-spacing: -0.02em;
 
-
   /* Custom fonts */
   --font-sf: "SF Pro Display", sans-serif;
   --font-geist-mono: "Geist Mono", sans-serif;
-  
+
+  --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
+    var(--delay, 0ms);
+
+  @keyframes cell-ripple {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
 }
 
 /* Prefer system-installed SF Pro Display when available */
@@ -42,7 +55,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"), local("SF Pro Display");
+  src:
+    local("SF Pro Display Regular"), local("SFProDisplay-Regular"),
+    local("SF Pro Display");
 }
 
 @font-face {
@@ -50,7 +65,9 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"), local("SF Pro Display");
+  src:
+    local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
+    local("SF Pro Display");
 }
 
 @font-face {
@@ -58,24 +75,20 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"), local("SF Pro Display");
+  src:
+    local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
+    local("SF Pro Display");
 }
 
- :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #fafafa;
 }
 
 /* Responsive helpers */
@@ -104,7 +117,15 @@ body {
   background: #555;
 }
 
+/* Custom grid utilities */
+.grid-cols-16 {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+
 /* Smooth transitions */
 * {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }

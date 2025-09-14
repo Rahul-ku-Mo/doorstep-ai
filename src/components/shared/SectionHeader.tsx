@@ -52,7 +52,7 @@ export default function SectionHeader({
 
       {description && layout === "row" && (
         <motion.p
-          className={`max-w-xl text-base text-[#939290] sm:text-lg ${descriptionClassName}`}
+          className={`max-w-xl text-base text-accent sm:text-lg ${descriptionClassName}`}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -64,7 +64,7 @@ export default function SectionHeader({
 
       {description && layout === "default" && (
         <motion.p
-          className={`max-w-xl text-base text-[#939290] sm:text-lg ${descriptionClassName}`}
+          className={`max-w-xl text-base text-accent sm:text-lg ${descriptionClassName}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

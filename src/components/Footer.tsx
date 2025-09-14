@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Image src="/Logo.svg" width={180} height={44} alt="Logo" />
 
-              <div className="font-geist-mono w-full max-w-40 text-sm text-[#939290]">
+              <div className="font-geist-mono w-full max-w-40 text-sm text-accent">
                 33 West 17th Street New York, 10011 United States
               </div>
 
@@ -170,7 +170,7 @@ export default function Footer() {
       </section>
 
       {/* Bottom Bar */}
-      <section className="border-medium-gray font-geist-mono mx-auto max-w-7xl border pt-6 pb-3 text-center text-[#939290]">
+      <section className="border-medium-gray font-geist-mono mx-auto max-w-7xl border pt-6 pb-3 text-center text-accent">
         © 2025 doorstep.ai. All rights reserved.
       </section>
     </footer>
