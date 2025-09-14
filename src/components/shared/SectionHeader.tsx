@@ -36,7 +36,7 @@ export default function SectionHeader({
           transition={{ duration: 0.6 }}
         >
           <div className="bg-primary size-2"></div>
-          <span className="text-sm text-[#666666]/60">{tag}</span>
+          <span className="text-sm text-[#666666]/60 font-geist-mono uppercase">{tag}</span>
         </motion.div>
 
         <motion.h2

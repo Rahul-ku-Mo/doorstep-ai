@@ -53,12 +53,10 @@ export default function TheProblem() {
           />
 
           <div className="mx-auto flex max-w-sm flex-col p-4 text-base font-medium sm:hidden">
-            <div className="text-black">
-              Fraud hides in delivery blind spots
-            </div>
+            <div className="text-black">Billions lost every year.</div>
             <span className="text-accent">
-              Beyond the doorstep, visibility ends — making it easy for false
-              claims to slip through and cost providers billions.
+              Every blind spot in the last 100 feet fuels disputes and customer
+              frustration.
             </span>
           </div>
         </motion.div>

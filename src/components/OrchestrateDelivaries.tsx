@@ -84,15 +84,16 @@ export default function OrchestrateDelivaries() {
             tag="Orchestrate Deliveries"
             title={
               <>
-                <span className="text-primary">Trace</span> and investigate every claim with clarity
+                Delivery event detection with
+                <span className="text-primary">doorstep.ai</span>
               </>
             }
             titleClassName="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl"
           />
         </div>
-        <div className="max-w-sm text-base text-accent sm:text-lg w-full">
-          <p>Tracking stops at the curb.</p>
-          <p>Refunds pile up without proof inside the building.</p>
+        <div className="text-accent w-full max-w-sm text-base sm:text-lg">
+          Our SDK detects events automatically from the driver’s phone — drivers
+          deliver as usual.
         </div>
       </div>
 

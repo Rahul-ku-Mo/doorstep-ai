@@ -20,7 +20,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
           cols.map((_, j) => (
             <motion.div
               whileHover={{
-                backgroundColor: `oklch(95% 0 0)`,
+                backgroundColor: `#eeeeee66`,
                 transition: { duration: 0.1 },
               }}
               animate={{

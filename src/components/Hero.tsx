@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="relative h-[100vh] overflow-hidden pt-24 sm:pt-28">
       {/* Hero Content */}
-      <div className="border-medium-gray relative z-20 mx-auto max-w-7xl border border-x px-4 py-8 sm:px-6 lg:px-8 flex items-end sm:items-center min-h-full pb-12">
+      <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-7xl items-end border border-x px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
         <motion.div
           className="relative z-20 flex max-w-lg flex-col gap-4 text-left sm:mx-auto sm:text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -30,13 +30,13 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="relative z-20 text-base text-[#939280] sm:max-w-lg sm:text-base lg:max-w-2xl lg:text-lg"
+            className="text-accent relative z-20 text-base sm:max-w-lg sm:text-lg lg:max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-         Doorstep tracks parking, entrance, floor, and dropoff -
-         giving teams precise visibility into every delivery.
+            Doorstep tracks parking, entrance, floor, and dropoff - giving teams
+            precise visibility into every delivery.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -49,7 +49,7 @@ export default function Hero() {
             <Button variant="primary">View Dashboard</Button>
           </motion.div>
         </motion.div>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Boxes />
         </div>
         {/* Corner plus marks */}
@@ -58,7 +58,16 @@ export default function Hero() {
           <CornerPlus position="top-right" animated={false} />
         </div>
 
-        <div className="absolute inset-0 z-10 bg-linear-to-b from-transparent to-card sm:hidden"></div>
+        <div className="absolute inset-0 hidden h-full w-full md:flex lg:hidden">
+          <Image
+            src="/tags.svg"
+            alt="tags"
+            fill={true}
+            className="object-cover"
+          />
+        </div>
+
+        <div className="to-card absolute inset-0 z-10 bg-linear-to-b from-transparent sm:hidden"></div>
       </div>
 
       {/* Background Image */}
@@ -67,7 +76,7 @@ export default function Hero() {
           src="/hero.svg"
           fill={true}
           alt="Hero"
-          className="z-10 object-cover object-left md:object-center lg:object-bottom"
+          className="z-10 object-cover object-left md:object-contain md:object-bottom lg:object-bottom"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, (max-width: 1280px) 100vw, 100vw"
           priority
         />

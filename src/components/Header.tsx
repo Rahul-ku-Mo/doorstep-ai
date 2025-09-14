@@ -22,13 +22,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 ">
       <motion.div
-        className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8 h-[52px]"
+        className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8"
         animate={{
           backgroundColor: isScrolled ? "#fafafa" : "transparent",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex h-9 items-center justify-between sm:h-16">
+        <div className="flex items-center justify-between ">
           {/* Logo */}
           <motion.div
             className="flex items-center"

@@ -42,11 +42,12 @@ export default function TheSolution() {
             tag="The Solution"
             title={
               <>
-                A <span className="text-primary">smarter layer</span> for the
-                last stretch
+                Power your team with precise{" "}
+                <span className="text-primary">drop-off</span> for the
+                visibility
               </>
             }
-            description="See couriers move through stairs, lifts, and doors inside a building. Every step becomes defensible evidence."
+            description="Making sure a driver delivered to the right building and floor is key to accurate refunds and operations."
             layout="row"
           />
         </div>
@@ -164,72 +165,72 @@ export default function TheSolution() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          {/* Event trail at a glance */}
+          {/* Manual review made easy */}
           <motion.div
-            className="border-x-medium-gray bg-card flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-6 sm:bg-transparent"
+            className="border-x-medium-gray bg-card flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 sm:bg-transparent"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./event.svg" width={24} height={24} alt="event" />
+            <Image src="./event.svg" width={24} height={24} alt="manual review" />
 
             <div>
               <h3 className="mb-2 text-lg font-medium text-black">
-                Event trail at a glance
+                Manual review made easy
               </h3>
               <p className="text-accent text-base">
-                All courier actions logged into a clear, trusted timeline.
+                Give support teams accurate visibility into the last 100m
               </p>
             </div>
           </motion.div>
 
-          {/* Proof inside the building */}
+          {/* Automate workflows */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-6"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./door.svg" width={24} height={24} alt="door" />
+            <Image src="./door.svg" width={24} height={24} alt="automate" />
 
             <div>
               <h3 className="mb-2 text-lg font-medium text-black">
-                Proof inside the building
+                Automate workflows
               </h3>
               <p className="text-accent text-base">
-                See stairs, lifts, wings, and doors — not just GPS.
+                Enable ops teams to automate claims and fraud resolution
               </p>
             </div>
           </motion.div>
 
-          {/* Disputes closed with proof */}
+          {/* Smarter route optimization */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-6"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./location.svg" width={24} height={24} alt="location" />
+            <Image src="./location.svg" width={24} height={24} alt="route optimization" />
             <div>
               <h3 className="mb-2 text-lg font-medium text-black">
-                Disputes closed with proof
+                Smarter route optimization
               </h3>
               <p className="text-accent text-base">
-                Export defensible case files for refunds and audits.
+                Help dispatchers track dwell times and delivery complexity
               </p>
             </div>
           </motion.div>
 
-          {/* Patterns that prevent fraud */}
+          {/* Wayfinding (Coming soon) */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-6"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./gear.svg" width={24} height={24} alt="gear" />
+            <Image src="./gear.svg" width={24} height={24} alt="wayfinding" />
             <div>
               <h3 className="mb-2 text-lg font-medium text-black">
-                Patterns that prevent fraud
+                Wayfinding (Coming soon)
               </h3>
               <p className="text-accent text-base">
-                Spot blind spots and refund leakage before they grow.
+                Guide drivers from parking to drop-off with precision
               </p>
             </div>
           </motion.div>

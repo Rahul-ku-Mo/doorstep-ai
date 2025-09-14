@@ -15,8 +15,8 @@ export default function Reliability() {
               tag="Reliability"
               title={
                 <>
-                  Built on strong{" "}
-                  <span className="text-primary">foundations</span> for
+                  Integrate the
+                  <span className="text-primary"> SDK </span>into your driver app
                 </>
               }
             />
@@ -102,7 +102,9 @@ export default function Reliability() {
                   </p>
                 </motion.div>
 
-                <Button variant="outline" className="mt-4">SDK Documentation <ArrowUpRight className="size-4"/></Button>
+                <Button variant="outline" className="mt-4">
+                  SDK Documentation <ArrowUpRight className="size-4" />
+                </Button>
               </div>
             </div>
           </motion.div>

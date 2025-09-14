@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 interface ButtonProps {
   children: ReactNode;
@@ -12,7 +12,6 @@ interface ButtonProps {
   disabled?: boolean;
   icon?: ReactNode;
   iconPosition?: "left" | "right";
-  hidden?: boolean;
 }
 
 const buttonVariants = {
@@ -36,20 +35,18 @@ export default function Button({
   onClick,
   disabled = false,
   icon,
-  iconPosition = "right",
-  hidden = false
+  iconPosition = "right"
 }: ButtonProps) {
   const baseClasses = "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-medium whitespace-nowrap transition-all ease-linear";
   
   return (
     <button
-      className={clsx(
+      className={cn(
         baseClasses,
         buttonVariants[variant],
         sizeVariants[size],
         {
-          'opacity-50 cursor-not-allowed': disabled,
-          'hidden': hidden
+          'opacity-50 cursor-not-allowed': disabled
         },
         className
       )}
