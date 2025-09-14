@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="border-medium-gray bg-card mx-auto flex w-full max-w-7xl flex-col border lg:flex-row">
           <div className="flex w-full flex-col gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
             <motion.div
-              className="sm:text-4.5xl text-primary max-w-xl text-3xl"
+              className="sm:text-4.5xl text-primary max-w-xl text-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

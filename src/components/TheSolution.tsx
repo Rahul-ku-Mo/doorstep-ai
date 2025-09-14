@@ -53,7 +53,7 @@ export default function TheSolution() {
         </div>
 
         <motion.div
-          className="relative overflow-hidden px-4 sm:px-12"
+          className="relative overflow-hidden px-4 sm:px-6 md:px-8"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -167,7 +167,7 @@ export default function TheSolution() {
         >
           {/* Manual review made easy */}
           <motion.div
-            className="border-x-medium-gray bg-card flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 sm:bg-transparent"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
@@ -185,7 +185,7 @@ export default function TheSolution() {
 
           {/* Automate workflows */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
@@ -203,7 +203,7 @@ export default function TheSolution() {
 
           {/* Smarter route optimization */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
@@ -220,7 +220,7 @@ export default function TheSolution() {
 
           {/* Wayfinding (Coming soon) */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >

@@ -16,7 +16,8 @@ export default function Reliability() {
               title={
                 <>
                   Integrate the
-                  <span className="text-primary"> SDK </span>into your driver app
+                  <span className="text-primary"> SDK </span>into your driver
+                  app
                 </>
               }
             />
@@ -57,7 +58,7 @@ export default function Reliability() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="w-full max-w-md">
+            <div className="w-full lg:max-w-md">
               <div className="divide-medium-gray/30 divide-y">
                 <motion.div className="group flex cursor-pointer flex-col gap-2 py-5 sm:flex-row sm:items-start sm:justify-between">
                   <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
@@ -122,7 +123,7 @@ export default function Reliability() {
             width={600}
             height={480}
             alt="Reliability"
-            className="h-auto w-full max-w-xl object-contain lg:max-w-none"
+            className="h-auto w-full max-w-xl object-contain sm:h-[480px] md:h-[480px] lg:h-auto lg:max-w-none"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
           />
         </motion.div>
