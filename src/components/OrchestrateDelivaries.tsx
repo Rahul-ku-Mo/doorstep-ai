@@ -85,7 +85,7 @@ export default function OrchestrateDelivaries() {
             title={
               <>
                 Delivery event detection with
-                <span className="text-primary">doorstep.ai</span>
+                <span className="text-primary"> doorstep.ai</span>
               </>
             }
             titleClassName="lg:text-4.5xl text-2xl text-black sm:max-w-lg sm:text-3xl"
