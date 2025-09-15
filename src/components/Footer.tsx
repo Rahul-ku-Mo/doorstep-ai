@@ -18,35 +18,29 @@ export default function Footer() {
           className="mx-auto"
         />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col border lg:flex-row justify-center items-center">
-          <div className="w-full gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12 max-w-xl">
-            <motion.div
-              className="sm:text-4.5xl text-primary text-3xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-black">
-                Scale delivery operations without compromising
-              </span>{" "}
-              trust or efficiency.
-            </motion.div>
-          </div>
-          <div className="flex items-center justify-center px-6 pb-8 lg:px-0 lg:pb-0 lg:mx-auto">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-center justify-center border lg:flex-row">
+          <motion.div
+            className="sm:text-4.5xl text-primary max-w-xl p-6 text-3xl sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12 text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-black">
+              Scale delivery operations without compromising
+            </span>{" "}
+            trust or efficiency.
+          </motion.div>
+          <div className="flex items-center justify-center px-6 pb-8 lg:mx-auto lg:px-0 lg:pb-0">
             <motion.div
               className="flex items-center justify-start gap-2 sm:gap-4"
-              initial={{ opacity: 0,  }}
-              whileInView={{ opacity: 1, }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Button variant="ghost">
-                Visit Docs
-              </Button>
-              <Button variant="outline">
-                Talk to an Expert
-              </Button>
+              <Button variant="ghost">Visit Docs</Button>
+              <Button variant="outline">Talk to an Expert</Button>
             </motion.div>
           </div>
         </div>
@@ -69,24 +63,24 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Image src="/Logo.svg" width={180} height={44} alt="Logo" />
 
-              <div className="font-geist-mono w-full max-w-40 text-sm text-accent">
+              <div className="font-geist-mono text-accent w-full max-w-40 text-sm">
                 33 West 17th Street New York, 10011 United States
               </div>
 
               <div className="border-medium-gray flex w-fit items-center justify-start gap-1 border border-y-0">
-              <Image
-                    src="./LinkedIn.svg"
-                    width={24}
-                    height={24}
-                    alt="linkedin"
-                  />
-                      <Image src="./X.svg" width={24} height={24} alt="x" />
-                  <Image
-                    src="./Facebook.svg"
-                    width={24}
-                    height={24}
-                    alt="facebook"
-                  />
+                <Image
+                  src="./LinkedIn.svg"
+                  width={24}
+                  height={24}
+                  alt="linkedin"
+                />
+                <Image src="./X.svg" width={24} height={24} alt="x" />
+                <Image
+                  src="./Facebook.svg"
+                  width={24}
+                  height={24}
+                  alt="facebook"
+                />
               </div>
             </div>
             <motion.div
@@ -143,7 +137,7 @@ export default function Footer() {
       </section>
 
       {/* Bottom Bar */}
-      <section className="border-medium-gray font-geist-mono mx-auto max-w-[1152px] border pt-6 pb-3 text-center text-accent">
+      <section className="border-medium-gray font-geist-mono text-accent mx-auto max-w-[1152px] border pt-6 pb-3 text-center">
         © 2025 doorstep.ai. All rights reserved.
       </section>
     </footer>
