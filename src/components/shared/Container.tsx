@@ -32,7 +32,7 @@ export default function Container({
   const borderClass = hasBorder ? `border-medium-gray ${borderClasses[borderPosition]}` : "";
   
   return (
-    <section className={`relative mx-auto w-full max-w-7xl ${borderClass} ${className}`}>
+    <section className={`relative mx-auto w-full max-w-[1152px] ${borderClass} ${className}`}>
       {hasCornerPlus && (
         <div className="pointer-events-none absolute inset-0 hidden md:block">
           <CornerPlus position="top-left" />

@@ -15,7 +15,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       )}
       {...rest}
     >
-      <div className="grid h-full max-h-full w-full max-w-7xl grid-cols-12 grid-rows-6">
+      <div className="grid h-full max-h-full w-full max-w-[1152px] grid-cols-12 grid-rows-6">
         {rows.map((_, i) =>
           cols.map((_, j) => (
             <motion.div

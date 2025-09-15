@@ -4,13 +4,13 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { Button, CornerPlus } from "./shared";
-import { Boxes } from "./ui/boxes-core";
+import { InteractiveGrid } from "./ui/interactive-grid";
 
 export default function Hero() {
   return (
     <section className="relative h-[100vh] overflow-hidden pt-24 sm:pt-28">
       {/* Hero Content */}
-      <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-7xl items-end border border-x px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
+      <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-[1152px] items-end border border-x px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
         <motion.div
           className="relative z-20 flex max-w-lg flex-col gap-4 text-left sm:mx-auto sm:text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -50,7 +50,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
         <div className="hidden lg:block">
-          <Boxes />
+          <InteractiveGrid />
         </div>
         {/* Corner plus marks */}
         <div className="pointer-events-none absolute inset-0 hidden md:block">
@@ -77,7 +77,7 @@ export default function Hero() {
           fill={true}
           alt="Hero"
           className="z-10 object-cover object-left md:object-contain md:object-bottom lg:object-bottom"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, (max-width: 1280px) 100vw, 100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, (max-width: 1152px) 100vw, 100vw"
           priority
         />
       </div>

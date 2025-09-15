@@ -34,10 +34,10 @@ export default function TheProblem() {
           <Image
             src="/problem.svg"
             alt="Problem illustration"
-            width={1280}
+            width={1152}
             height={720}
             className="hidden h-auto w-full sm:block"
-            sizes="(max-width: 1024px) 100vw, 1280px"
+            sizes="(max-width: 1024px) 100vw, 1152px"
             priority
           />
 
@@ -45,7 +45,7 @@ export default function TheProblem() {
           <Image
             src="/mobile-view-phone.svg"
             alt="Problem illustration mobile"
-            width={1280}
+            width={1152}
             height={720}
             className="block h-auto w-full p-4 sm:hidden"
             sizes="100vw"

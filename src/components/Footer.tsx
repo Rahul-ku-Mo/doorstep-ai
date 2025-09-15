@@ -12,13 +12,13 @@ export default function Footer() {
         {/* Decorative bar above */}
         <Image
           src="/top.svg"
-          width={1280}
+          width={1152}
           height={101}
           alt="top"
           className="mx-auto"
         />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-7xl flex-col border lg:flex-row">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col border lg:flex-row">
           <div className="flex w-full flex-col gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
             <motion.div
               className="sm:text-4.5xl text-primary max-w-xl text-3xl mx-auto"
@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Decorative bar below */}
         <Image
           src="/bottom.svg"
-          width={1280}
+          width={1152}
           height={101}
           alt="bottom"
           className="mx-auto"
@@ -61,8 +61,8 @@ export default function Footer() {
       </section>
 
       {/* Navigation Links */}
-      <section className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="border-x-medium-gray mx-auto max-w-[1152px] border border-y-0 py-12 sm:py-16">
+        <div className="mx-auto max-w-[1152px] px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-start justify-between gap-10">
             {/* Products */}
 
@@ -143,7 +143,7 @@ export default function Footer() {
       </section>
 
       {/* Bottom Bar */}
-      <section className="border-medium-gray font-geist-mono mx-auto max-w-7xl border pt-6 pb-3 text-center text-accent">
+      <section className="border-medium-gray font-geist-mono mx-auto max-w-[1152px] border pt-6 pb-3 text-center text-accent">
         © 2025 doorstep.ai. All rights reserved.
       </section>
     </footer>

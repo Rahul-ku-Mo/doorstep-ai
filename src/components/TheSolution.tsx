@@ -65,10 +65,10 @@ export default function TheSolution() {
               <Image
                 src="/the-solution.svg"
                 alt="Solution"
-                width={1280}
+                width={1152}
                 height={720}
                 className="h-auto w-full"
-                sizes="(max-width: 1024px) 100vw, 1280px"
+                sizes="(max-width: 1024px) 100vw, 1152px"
                 priority
               />
             </div>
@@ -77,7 +77,7 @@ export default function TheSolution() {
             <Image
               src="/the-solution-phone.svg"
               alt="Solution Mobile"
-              width={1280}
+              width={1152}
               height={720}
               className="block h-auto w-full object-cover sm:hidden"
               sizes="100vw"
