@@ -31,6 +31,11 @@ html {
   --color-background: #fafafa;
 
   /* Custom font sizes to replace old tailwind.config.ts entries */
+
+  --text-1_5xl: 15px;
+  --text-1_5xl--line-height: 1.2;
+  --text-1_5xl--letter-spacing: 0;
+
   --text-3_5xl: 32px;
   --text-3_5xl--line-height: 1.4;
   --text-3_5xl--letter-spacing: 0;

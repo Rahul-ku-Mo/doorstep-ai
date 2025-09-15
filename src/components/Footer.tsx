@@ -39,7 +39,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Button variant="ghost">Visit Docs</Button>
+              <Button variant="default">Visit Docs</Button>
               <Button variant="outline">Talk to an Expert</Button>
             </motion.div>
           </div>

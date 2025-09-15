@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Circle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "./shared";
 
@@ -14,10 +14,10 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Background change logic
       setIsScrolled(currentScrollY > 50);
-      
+
       // Hide/show logic
       if (currentScrollY < 10) {
         // Always show at top
@@ -29,7 +29,7 @@ export default function Header() {
         // Scrolling up - show
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -38,7 +38,7 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <motion.header 
+    <motion.header
       className="fixed top-0 right-0 left-0 z-50"
       animate={{
         y: isVisible ? 0 : -100,
@@ -52,7 +52,7 @@ export default function Header() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
             className="flex items-center"
@@ -79,15 +79,24 @@ export default function Header() {
           </motion.div>
 
           {/* Right side buttons */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <Button variant="outline" className="hidden sm:flex">
-              SDK Documentation
-              <ArrowUpRight className="size-4" />
+          <div className="flex items-center gap-8">
+            <Button
+              variant="ghost"
+              className="hidden sm:flex"
+              icon={<ArrowUpRight className="size-4" />}
+              iconPosition="left"
+            >
+              Join the Team
             </Button>
-            
-
-            <Button variant="ghost">Get a Demo</Button>
-        
+            <Button
+              variant="ghost"
+              className="hidden sm:flex"
+              icon={<ArrowUpRight className="size-4" />}
+              iconPosition="left"
+            >
+              SDK Docs
+            </Button>
+            <Button variant="outline" icon={<Circle className="size-4 fill-primary text-primary bg-secondary rounded-full p-0.5" />} iconPosition="left">Get a Demo</Button>
           </div>
         </div>
       </motion.div>
