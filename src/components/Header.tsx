@@ -46,14 +46,13 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.div
-        className="border-x-medium-gray mx-auto max-w-[1152px] border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8"
+        className="border-x-medium-gray border-b border-b-medium-gray mx-auto max-w-[1152px] border-x p-4 sm:px-6 lg:px-8"
         animate={{
           backgroundColor: isScrolled ? "#fafafa" : "transparent",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div className="flex items-center justify-between">
-          
           {/* Logo */}
           <motion.div
             className="flex items-center"
@@ -97,7 +96,16 @@ export default function Header() {
             >
               SDK Docs
             </Button>
-            <Button variant="outline" icon={<Circle className="size-4 fill-primary text-primary bg-secondary rounded-full p-0.5" />} iconPosition="left">Get a Demo</Button>
+            <Button
+              variant="outline"
+              className="!px-3"
+              icon={
+                <Circle className="fill-primary text-primary bg-secondary size-4 rounded-full px-0.5" />
+              }
+              iconPosition="left"
+            >
+              Get a Demo
+            </Button>
           </div>
         </div>
       </motion.div>

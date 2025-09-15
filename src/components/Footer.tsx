@@ -18,7 +18,7 @@ export default function Footer() {
           className="mx-auto"
         />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-start sm:items-center justify-center border lg:flex-row py-10 px-4 lg:p-12 gap-6">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-start sm:items-center justify-center border lg:flex-row py-10 px-4 lg:p-12 lg:py-16 gap-6">
           <motion.div
             className="sm:text-4.5xl text-primary max-w-xl text-3xl lg:max-w-3xl lg:gap-16 text-left font-medium"
             initial={{ opacity: 0, y: 20 }}
@@ -39,8 +39,8 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Button variant="default">Visit Docs</Button>
-              <Button variant="outline">Talk to an Expert</Button>
+              <Button variant="default" className="!px-3">Visit Docs</Button>
+              <Button variant="outline" className="!px-3">Talk to an Expert</Button>
             </motion.div>
           </div>
         </div>

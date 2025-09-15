@@ -104,7 +104,7 @@ export default function Reliability() {
                   </p>
                 </motion.div>
 
-                <Button variant="outline" className="mt-4">
+                <Button variant="ghost" className="mt-4">
                   SDK Documentation <ArrowUpRight className="size-4" />
                 </Button>
               </div>
