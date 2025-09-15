@@ -8,19 +8,43 @@ import { Button } from "./shared";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Background change logic
+      setIsScrolled(currentScrollY > 50);
+      
+      // Hide/show logic
+      if (currentScrollY < 10) {
+        // Always show at top
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past threshold - hide
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 ">
+    <motion.header 
+      className="fixed top-0 right-0 left-0 z-50"
+      animate={{
+        y: isVisible ? 0 : -100,
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
       <motion.div
         className="border-x-medium-gray mx-auto max-w-7xl border border-y-0 px-4 pt-2 pb-2 sm:px-6 lg:px-8"
         animate={{
@@ -67,6 +91,6 @@ export default function Header() {
           </div>
         </div>
       </motion.div>
-    </header>
+    </motion.header>
   );
 }

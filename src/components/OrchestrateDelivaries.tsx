@@ -1,13 +1,27 @@
 "use client";
 
 import { DoorClosed, ArrowUp, Package } from "lucide-react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Container, SectionHeader } from "./shared";
+import dynamic from "next/dynamic";
+import { LottieRefCurrentProps } from "lottie-react";
 
-export default function OrchestrateDelivaries() {
+// Dynamically import Lottie to avoid SSR issues
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-96 w-full animate-pulse rounded bg-gray-100" />
+  ),
+});
+
+// Import your Lottie JSON file
+import animationData from "@/components/shared/trim-path-animation.json";
+
+export default function OrchestrateDeliveries() {
   const [activeSection, setActiveSection] = useState(0);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null);
 
   const sections = [
     {
@@ -66,13 +80,32 @@ export default function OrchestrateDelivaries() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSection((prev) => (prev + 1) % sections.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [sections.length]);
 
+  // Handle Lottie animation playback
+  useEffect(() => {
+    if (lottieRef.current) {
+      // Define timeframes for each section (in milliseconds)
+      const timeframes = [1000, 5000, 10500];
+      const targetTime = timeframes[activeSection] || 1000;
+      
+      // Jump to specific timeframe and play
+      lottieRef.current.goToAndPlay(targetTime, false);
+    }
+  }, [activeSection]);
+
   const handleSectionClick = (index: number) => {
     setActiveSection(index);
+  };
+
+  // Handle first load animation completion
+  const handleLottieComplete = () => {
+    if (isFirstLoad) {
+      setIsFirstLoad(false);
+    }
   };
 
   return (
@@ -92,8 +125,8 @@ export default function OrchestrateDelivaries() {
           />
         </div>
         <div className="text-accent w-full max-w-sm text-base sm:text-lg">
-          Our SDK detects events automatically from the driver’s phone — drivers
-          deliver as usual.
+          Our SDK detects events automatically from the driver&apos;s phone —
+          drivers deliver as usual.
         </div>
       </div>
 
@@ -122,17 +155,16 @@ export default function OrchestrateDelivaries() {
                 transition={{ duration: 0.3 }}
               />
               {section.title}
-              {/* Animated underline with Framer Motion */}
+              {/* Animated underline with 4-second duration */}
               <motion.div
                 className="bg-primary absolute bottom-0 left-0 h-0.5"
-                initial={{ width: 0, opacity: 0 }}
+                initial={{ width: 0 }}
                 animate={{
-                  width: activeSection === index ? "100%" : 0,
-                  opacity: activeSection === index ? 1 : 0,
+                  width: activeSection === index ? "100%" : "0%",
                 }}
                 transition={{
-                  duration: 0.5,
-                  ease: [0.4, 0.0, 0.2, 1],
+                  duration: activeSection === index ? 5 : 0.5,
+                  ease: activeSection === index ? "linear" : "easeOut",
                 }}
               />
             </motion.button>
@@ -141,20 +173,28 @@ export default function OrchestrateDelivaries() {
 
         <div className="relative mt-6 flex w-full flex-1 justify-center lg:mt-0 lg:w-auto lg:justify-start">
           <motion.div
-            key={activeSection}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: 50 }} // Fade in from bottom
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              delay: 0.2, // Small delay for better effect
+            }}
           >
-            <Image
-              src="/building.svg"
-              alt="Building schematic"
-              width={578}
-              height={578}
-              className="h-auto w-full max-w-xs rounded sm:max-w-sm lg:max-w-none"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 578px"
-            />
+            <div className="h-auto w-full">
+              <Lottie
+                lottieRef={lottieRef}
+                animationData={animationData}
+                autoplay={true}
+                loop={true}
+                onComplete={handleLottieComplete}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+                className="rounded"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
