@@ -40,7 +40,7 @@ export default function SectionHeader({
         </motion.div>
 
         <motion.h2
-          className={`sm:text-4.5xl text-3xl text-black sm:max-w-lg ${titleClassName}`}
+          className={`sm:text-4.5xl text-3xl font-medium text-black sm:max-w-lg ${titleClassName}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

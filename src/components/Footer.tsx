@@ -18,10 +18,10 @@ export default function Footer() {
           className="mx-auto"
         />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col border lg:flex-row">
-          <div className="flex w-full flex-col gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col border lg:flex-row justify-center items-center">
+          <div className="w-full gap-6 p-6 sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12 max-w-xl">
             <motion.div
-              className="sm:text-4.5xl text-primary max-w-xl text-3xl mx-auto"
+              className="sm:text-4.5xl text-primary text-3xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

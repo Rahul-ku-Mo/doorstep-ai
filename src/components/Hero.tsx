@@ -12,14 +12,14 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-[1152px] items-end border border-x px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
         <motion.div
-          className="relative z-20 flex max-w-lg flex-col gap-4 text-left sm:mx-auto sm:text-center"
+          className="relative z-20 flex max-w-xl flex-col gap-4 text-left sm:mx-auto sm:text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Main Heading */}
           <motion.div
-            className="sm:text-5.5xl relative z-20 text-3xl font-medium sm:text-center"
+            className="sm:text-5.5xl relative z-20 text-3xl sm:text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -30,7 +30,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="text-accent relative z-20 text-base sm:max-w-lg sm:text-lg lg:max-w-2xl"
+            className="text-accent relative z-20 text-base sm:max-w-lg sm:text-lg lg:max-w-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -60,7 +60,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 hidden h-full w-full md:flex lg:hidden">
           <Image
-            src="/Tags.svg"
+            src="/grid-tablet.svg"
             alt="tags"
             fill={true}
             className="object-cover"
