@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-     <body className={`${GeistSans.variable} ${GeistMono.variable} font-sf`}>{children}</body>
+    <html lang="en" className="w-full">
+     <body className={`${GeistSans.variable} ${GeistMono.variable} font-sf w-full overflow-x-hidden`}>{children}</body>
     </html>
   )
 }

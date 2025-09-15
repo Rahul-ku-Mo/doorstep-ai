@@ -7,7 +7,7 @@ import { Button, Container, SectionHeader } from "./shared";
 
 export default function Reliability() {
   return (
-    <Container className="border-medium-gray flex flex-col border-y-0">
+    <Container className="border-medium-gray flex flex-col border-y-0 pt-14">
       <div className="flex flex-col justify-between gap-8 p-4 sm:p-8 lg:flex-row lg:p-12 lg:pt-20 lg:pr-0 lg:pb-0">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start">
@@ -57,6 +57,7 @@ export default function Reliability() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
+            className="pt-4"
           >
             <div className="w-full lg:max-w-md">
               <div className="divide-medium-gray/30 divide-y">

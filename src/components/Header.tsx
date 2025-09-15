@@ -53,6 +53,7 @@ export default function Header() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div className="flex items-center justify-between">
+          
           {/* Logo */}
           <motion.div
             className="flex items-center"

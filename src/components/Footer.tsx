@@ -18,9 +18,9 @@ export default function Footer() {
           className="mx-auto"
         />
 
-        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-center justify-center border lg:flex-row">
+        <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-start sm:items-center justify-center border lg:flex-row py-10 px-4 lg:p-12 gap-6">
           <motion.div
-            className="sm:text-4.5xl text-primary max-w-xl p-6 text-3xl sm:p-8 lg:max-w-3xl lg:gap-16 lg:p-12 text-center lg:text-left"
+            className="sm:text-4.5xl text-primary max-w-xl text-3xl lg:max-w-3xl lg:gap-16 text-left font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -31,7 +31,7 @@ export default function Footer() {
             </span>{" "}
             trust or efficiency.
           </motion.div>
-          <div className="flex items-center justify-center px-6 pb-8 lg:mx-auto lg:px-0 lg:pb-0">
+          <div className="flex items-center justify-center">
             <motion.div
               className="flex items-center justify-start gap-2 sm:gap-4"
               initial={{ opacity: 0 }}

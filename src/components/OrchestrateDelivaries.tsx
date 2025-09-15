@@ -111,7 +111,7 @@ export default function OrchestrateDeliveries() {
   return (
     <Container className="border-y-0">
       {/* Header */}
-      <div className="border-y-medium-gray flex flex-col items-start justify-between gap-4 border border-x-0 border-t-0 p-4 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
+      <div className="border-y-medium-gray flex flex-col items-start justify-between pt-14 gap-4 border border-x-0 border-t-0 p-4 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
         <div className="max-w-xl">
           <SectionHeader
             tag="Orchestrate Deliveries"
@@ -183,6 +183,7 @@ export default function OrchestrateDeliveries() {
           >
             <div className="h-auto w-full">
               <Lottie
+              
                 lottieRef={lottieRef}
                 animationData={animationData}
                 autoplay={true}
