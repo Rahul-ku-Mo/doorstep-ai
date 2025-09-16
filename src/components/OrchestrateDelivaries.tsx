@@ -15,8 +15,10 @@ const Lottie = dynamic(() => import("lottie-react"), {
   ),
 });
 
+
 // Import your Lottie JSON file
-import animationData from "@/components/shared/trim-path-animation.json";
+import animationData from "@/components/shared/dektop-animation.json";
+import phoneLottieData from "@/components/shared/phone-animation.json"
 
 export default function OrchestrateDeliveries() {
   const [activeSection, setActiveSection] = useState(0);
@@ -85,14 +87,14 @@ export default function OrchestrateDeliveries() {
     return () => clearInterval(interval);
   }, [sections.length]);
 
-  // Handle Lottie animation playback
+  // Handle Lottie animation playback (desktop only)
   useEffect(() => {
     if (lottieRef.current) {
       // Define timeframes for each section (in milliseconds)
-      const timeframes = [1000, 5000, 10500];
+      const timeframes = [1000, 4000, 10500];
       const targetTime = timeframes[activeSection] || 1000;
 
-      // Jump to specific timeframe and play
+      // Jump to specific timeframe and play (only for desktop animation)
       lottieRef.current.goToAndPlay(targetTime, false);
     }
   }, [activeSection]);
@@ -109,7 +111,7 @@ export default function OrchestrateDeliveries() {
   };
 
   return (
-    <Container className="border-y-0 px-8 py-20 flex flex-col gap-12">
+    <Container className="flex flex-col gap-6 border-y-0 px-4 pb-12 sm:gap-12 sm:px-8 sm:py-20">
       {/* Header */}
       <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="max-w-xl">
@@ -132,12 +134,12 @@ export default function OrchestrateDeliveries() {
 
       {/* Animated Tabs */}
       <div className="relative flex flex-col items-start gap-8">
-        <div className="flex flex-row flex-wrap gap-2 lg:w-auto lg:flex-col lg:gap-0 absolute z-20 top-6">
+        <div className="absolute z-20 flex flex-row flex-wrap gap-2 -top-2 sm:top-6 lg:w-auto lg:flex-col lg:gap-0">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
               onClick={() => handleSectionClick(index)}
-              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 whitespace-nowrap uppercase transition-all duration-200 ${
+              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 text-xs whitespace-nowrap uppercase transition-all duration-200 sm:text-base ${
                 activeSection === index
                   ? "text-black"
                   : "hover:text-primary text-[#666666]/60"
@@ -147,7 +149,7 @@ export default function OrchestrateDeliveries() {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="bg-primary size-3"
+                className="bg-primary size-2 sm:size-3"
                 animate={{
                   scale: activeSection === index ? 1.2 : 1,
                   opacity: activeSection === index ? 1 : 0.6,
@@ -181,23 +183,40 @@ export default function OrchestrateDeliveries() {
               delay: 0.2, // Small delay for better effect
             }}
           >
-            <div className="h-auto w-full flex items-center justify-center">
-              <Lottie
-                lottieRef={lottieRef}
-                animationData={animationData}
-                autoplay={true}
-                loop={true}
-                onComplete={handleLottieComplete}
-                style={{
-                  width: "100%",
-                  maxWidth: "90%",
-                  height: "auto",
-                }}
-                className="rounded"
-              />
-              <div className="absolute inset-0 bg-linear-to-b from-transparent from-95% to-background" />
-
+            <div className="flex h-auto w-full items-center justify-center">
+              {/* Desktop/Tablet Animation */}
+              <div className="hidden sm:block">
+                <Lottie
+                  lottieRef={lottieRef}
+                  animationData={animationData}
+                  autoplay={true}
+                  loop={true}
+                  onComplete={handleLottieComplete}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+              
+              {/* Mobile Animation */}
+              <div className="block sm:hidden">
+                <Lottie
+                  animationData={phoneLottieData}
+                  autoplay={true}
+                  loop={true}
+                  onComplete={handleLottieComplete}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+              
+              <div className="to-background absolute inset-0 bg-linear-to-b from-transparent from-95%" />
             </div>
+
+            
           </motion.div>
         </div>
       </div>

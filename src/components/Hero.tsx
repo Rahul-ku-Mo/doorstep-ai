@@ -45,13 +45,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex min-h-12 flex-wrap-reverse gap-4 sm:flex-nowrap pt-8"
+            className="flex min-h-0 sm:min-h-12 flex-wrap-reverse gap-4 sm:flex-nowrap pt-4 sm:pt-8"
           >
             <Button
               variant="primary"
               icon={<Circle className="size-3 fill-white" />}
               iconPosition="left"
-              className="!h-12 !px-3"
+              className="sm:!min-h-12 !px-3"
             >
               View Dashboard
             </Button>

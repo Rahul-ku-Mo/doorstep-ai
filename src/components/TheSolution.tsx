@@ -11,14 +11,14 @@ export default function TheSolution() {
   const tooltipData = [
     {
       id: "building-entrance",
-      position: { top: "50%", left: "40%" },
+      position: { top: "50%", left: "41.5%" },
       title: "Entered Building - Main Entrance Lobby",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/gate.svg",
     },
     {
       id: "dropped-package",
-      position: { top: "62%", left: "26%" },
+      position: { top: "58%", left: "33.5%" },
       title: "Driver dropped off package",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/package.svg",
@@ -26,7 +26,7 @@ export default function TheSolution() {
 
     {
       id: "ascend-floors",
-      position: { top: "58%", left: "32%" },
+      position: { top: "62%", left: "28%" },
       title: "Driver ascend -4-5 floors",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/stairs.svg",
@@ -35,9 +35,9 @@ export default function TheSolution() {
 
   return (
     <>
-      <Container className="relative z-10 border-y-0 py-20">
+      <Container className="relative z-10 border-y-0 py-12 sm:py-20">
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row sm:pb-12 sm:px-8">
+        <div className="flex flex-col items-start justify-between gap-8 px-4 sm:px-8 sm:pb-12 lg:flex-row">
           <SectionHeader
             tag="The Solution"
             title={
@@ -47,6 +47,7 @@ export default function TheSolution() {
                 visibility
               </>
             }
+            descriptionClassName="pb-8"
             description="Making sure a driver delivered to the right building and floor is key to accurate refunds and operations."
             layout="row"
           />
@@ -63,7 +64,7 @@ export default function TheSolution() {
             {/* Desktop/Tablet Image - Hidden on mobile */}
             <div className="hidden sm:block">
               <Image
-                src="/the-solution.svg"
+                src="/dashboard-new.png"
                 alt="Solution"
                 width={1152}
                 height={720}
@@ -143,10 +144,7 @@ export default function TheSolution() {
                             </div>
                           </div>
 
-                          {/* Arrow pointing up */}
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 transform">
-                            <div className="h-3 w-3 translate-y-1 rotate-45 transform border-t border-l border-gray-200 bg-white"></div>
-                          </div>
+                      
                         </div>
                       </motion.div>
                     )}
@@ -167,11 +165,16 @@ export default function TheSolution() {
         >
           {/* Manual review made easy */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
+            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./event.svg" width={24} height={24} alt="manual review" />
+            <Image
+              src="./event.svg"
+              width={24}
+              height={24}
+              alt="manual review"
+            />
 
             <div>
               <h3 className="text-base font-normal text-black">
@@ -185,7 +188,7 @@ export default function TheSolution() {
 
           {/* Automate workflows */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
+            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
@@ -203,11 +206,16 @@ export default function TheSolution() {
 
           {/* Smarter route optimization */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
+            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <Image src="./location.svg" width={24} height={24} alt="route optimization" />
+            <Image
+              src="./location.svg"
+              width={24}
+              height={24}
+              alt="route optimization"
+            />
             <div>
               <h3 className="text-base font-normal text-black">
                 Smarter route optimization
@@ -220,7 +228,7 @@ export default function TheSolution() {
 
           {/* Wayfinding (Coming soon) */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
+            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8 mb-4 sm:mb-0"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >

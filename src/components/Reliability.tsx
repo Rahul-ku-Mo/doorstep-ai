@@ -7,8 +7,8 @@ import { Button, Container, SectionHeader } from "./shared";
 
 export default function Reliability() {
   return (
-    <Container className="border-medium-gray flex flex-col border-y-0 py-20 px-8">
-      <div className="flex justify-between gap-8">
+    <Container className="border-medium-gray flex flex-col border-y-0 px-4 py-12 sm:px-8 sm:py-20">
+      <div className="flex flex-wrap justify-between gap-8 md:flex-nowrap">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start">
             <SectionHeader
@@ -131,7 +131,7 @@ export default function Reliability() {
       </div>
 
       <motion.div
-        className="h-full w-full text-center text-black pt-20"
+        className="h-full w-full pt-20 text-center text-black"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
