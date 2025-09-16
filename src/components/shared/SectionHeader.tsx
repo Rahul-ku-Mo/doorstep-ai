@@ -30,8 +30,8 @@ export default function SectionHeader({
       <div className="mb-2 flex grow flex-col items-start gap-2">
         <motion.div
           className="decoration-medium-gray mb-2 flex items-center gap-2 underline decoration-dashed underline-offset-4"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
@@ -40,7 +40,7 @@ export default function SectionHeader({
         </motion.div>
 
         <motion.h2
-          className={`sm:text-4.5xl text-3xl font-medium text-black sm:max-w-lg ${titleClassName}`}
+          className={`sm:text-4.5xl text-3xl font-normal text-black sm:max-w-lg ${titleClassName}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,8 +53,8 @@ export default function SectionHeader({
       {description && layout === "row" && (
         <motion.p
           className={`max-w-sm text-base text-accent sm:text-lg ${descriptionClassName}`}
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >

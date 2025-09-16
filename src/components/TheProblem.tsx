@@ -7,9 +7,12 @@ import { Container, SectionHeader } from "./shared";
 export default function TheProblem() {
   return (
     <>
-      <Container className="relative z-10 border-t-0" hasCornerPlus={true}>
+      <Container
+        className="relative z-10 py-20 "
+        hasCornerPlus={true}
+      >
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-8 p-4 pt-10 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pt-20">
+        <div className="flex flex-col items-start justify-between gap-8 pb-12 px-8 lg:flex-row">
           <SectionHeader
             tag="The Challenge"
             title={
@@ -52,7 +55,7 @@ export default function TheProblem() {
             priority
           />
 
-          <div className="mx-auto flex max-w-sm flex-col py-4 text-base font-medium sm:hidden">
+          <div className="mx-auto flex max-w-sm flex-col py-4 text-base font-normal sm:hidden">
             <div className="text-black">Billions lost every year.</div>
             <span className="text-accent">
               Every blind spot in the last 100 feet fuels disputes and customer

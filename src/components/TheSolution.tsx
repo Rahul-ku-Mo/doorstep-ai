@@ -35,9 +35,9 @@ export default function TheSolution() {
 
   return (
     <>
-      <Container className="relative z-10 border-y-0 pt-12 sm:pt-16 lg:pt-20">
+      <Container className="relative z-10 border-y-0 py-20">
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-8 p-4 sm:p-8 lg:flex-row lg:gap-6 lg:p-12 lg:pb-12">
+        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row sm:pb-12 sm:px-8">
           <SectionHeader
             tag="The Solution"
             title={
@@ -134,7 +134,7 @@ export default function TheSolution() {
                               alt={tooltip.title}
                             />
                             <div className="min-w-0 flex-1">
-                              <p className="text-primary text-sm font-medium">
+                              <p className="text-primary text-sm font-normal">
                                 {tooltip.title}
                               </p>
                               <p className="font-geist-mono text-accent mt-1 text-xs">
@@ -167,14 +167,14 @@ export default function TheSolution() {
         >
           {/* Manual review made easy */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <Image src="./event.svg" width={24} height={24} alt="manual review" />
 
             <div>
-              <h3 className="mb-2 text-lg font-medium text-black">
+              <h3 className="text-base font-normal text-black">
                 Manual review made easy
               </h3>
               <p className="text-accent text-base">
@@ -185,14 +185,14 @@ export default function TheSolution() {
 
           {/* Automate workflows */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <Image src="./door.svg" width={24} height={24} alt="automate" />
 
             <div>
-              <h3 className="mb-2 text-lg font-medium text-black">
+              <h3 className="text-base font-normal text-black">
                 Automate workflows
               </h3>
               <p className="text-accent text-base">
@@ -203,13 +203,13 @@ export default function TheSolution() {
 
           {/* Smarter route optimization */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <Image src="./location.svg" width={24} height={24} alt="route optimization" />
             <div>
-              <h3 className="mb-2 text-lg font-medium text-black">
+              <h3 className="text-base font-normal text-black">
                 Smarter route optimization
               </h3>
               <p className="text-accent text-base">
@@ -220,13 +220,13 @@ export default function TheSolution() {
 
           {/* Wayfinding (Coming soon) */}
           <motion.div
-            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8"
+            className="border-x-medium-gray flex flex-col items-start space-y-4 border border-y-0 border-l-0 p-4 md:p-6 lg:p-8 gap-6"
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <Image src="./gear.svg" width={24} height={24} alt="wayfinding" />
             <div>
-              <h3 className="mb-2 text-lg font-medium text-black">
+              <h3 className="text-base font-normal text-black">
                 Wayfinding (Coming soon)
               </h3>
               <p className="text-accent text-base">

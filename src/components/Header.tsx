@@ -46,9 +46,9 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.div
-        className="border-x-medium-gray border-b border-b-medium-gray mx-auto max-w-[1152px] border-x p-4 sm:px-6 lg:px-8"
+        className="border-x-medium-gray border-b border-b-medium-gray mx-auto w-full border-x p-4 sm:px-6 lg:px-8 bg-background"
         animate={{
-          backgroundColor: isScrolled ? "#fafafa" : "transparent",
+          backgroundColor: isScrolled ? "#fafafa": "#fafafa",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >

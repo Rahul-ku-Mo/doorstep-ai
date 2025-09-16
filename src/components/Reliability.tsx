@@ -7,8 +7,8 @@ import { Button, Container, SectionHeader } from "./shared";
 
 export default function Reliability() {
   return (
-    <Container className="border-medium-gray flex flex-col border-y-0 pt-14">
-      <div className="flex flex-col justify-between gap-8 p-4 sm:p-8 lg:flex-row lg:p-12 lg:pt-20 lg:pr-0 lg:pb-0">
+    <Container className="border-medium-gray flex flex-col border-y-0 py-20 px-8">
+      <div className="flex justify-between gap-8">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-start">
             <SectionHeader
@@ -62,7 +62,7 @@ export default function Reliability() {
             <div className="w-full lg:max-w-md">
               <div className="divide-medium-gray/30 divide-y">
                 <motion.div className="group flex cursor-pointer flex-col gap-2 py-5 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
+                  <div className="font-normal text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
                     Safe Rollouts.
                   </div>
                   <p className="text-accent sm:w-2/3">
@@ -74,7 +74,7 @@ export default function Reliability() {
                   className="border-t-medium-gray group flex cursor-pointer flex-col gap-2 border-t-2 py-5 sm:flex-row sm:items-start sm:justify-between"
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
+                  <div className="font-normal text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
                     Observability
                   </div>
                   <p className="text-accent sm:w-2/3">
@@ -85,7 +85,7 @@ export default function Reliability() {
                   className="border-y-medium-gray group flex cursor-pointer flex-col gap-2 border-y-2 py-5 sm:flex-row sm:items-start sm:justify-between"
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
+                  <div className="font-normal text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
                     Hardware-Free
                   </div>
                   <p className="text-accent sm:w-2/3">
@@ -96,7 +96,7 @@ export default function Reliability() {
                   className="border-y-medium-gray group flex cursor-pointer flex-col gap-2 border-b-2 py-5 sm:flex-row sm:items-start sm:justify-between"
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="font-medium text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
+                  <div className="font-normal text-black transition-colors duration-200 group-hover:text-blue-600 sm:w-1/3">
                     Fraud Prevention
                   </div>
                   <p className="text-accent sm:w-2/3">
@@ -131,17 +131,13 @@ export default function Reliability() {
       </div>
 
       <motion.div
-        className="h-full w-full px-6 py-10 text-center text-black sm:p-12"
+        className="h-full w-full text-center text-black pt-20"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
-        <motion.p
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-          className="cursor-default transition-colors duration-200 hover:text-blue-600"
-        >
+        <motion.p>
           Backed by research by PhD team from MIT — 30+ indoor-nav patents & 50+
           publications.
         </motion.p>

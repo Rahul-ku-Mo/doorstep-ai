@@ -12,26 +12,26 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-[1152px] items-end border border-x border-y-0 px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
         <motion.div
-          className="relative z-20 flex max-w-xl flex-col gap-2 sm:gap-4 text-left sm:mx-auto"
+          className="relative z-20 flex max-w-xl flex-col gap-2 text-left sm:mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="decoration-medium-gray flex items-center gap-2 underline decoration-dashed underline-offset-4"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="decoration-medium-gray flex items-center gap-1 underline decoration-dashed underline-offset-4 mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="bg-primary size-2"></div>
-            <span className="font-geist-mono text-sm text-[#666666]/60 uppercase">
+            <span className="font-geist-mono text-[13px] text-[#666666]/60 uppercase">
               Doorstep
             </span>
           </motion.div>
           {/* Main Heading */}
           <motion.div
-            className="sm:text-5.5xl relative z-20 text-3xl font-medium"
+            className="sm:text-5.5xl relative z-20 text-3xl font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex min-h-12 flex-wrap-reverse gap-4 sm:flex-nowrap"
+            className="flex min-h-12 flex-wrap-reverse gap-4 sm:flex-nowrap pt-8"
           >
             <Button
               variant="primary"

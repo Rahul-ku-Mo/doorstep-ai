@@ -91,7 +91,7 @@ export default function OrchestrateDeliveries() {
       // Define timeframes for each section (in milliseconds)
       const timeframes = [1000, 5000, 10500];
       const targetTime = timeframes[activeSection] || 1000;
-      
+
       // Jump to specific timeframe and play
       lottieRef.current.goToAndPlay(targetTime, false);
     }
@@ -109,9 +109,9 @@ export default function OrchestrateDeliveries() {
   };
 
   return (
-    <Container className="border-y-0">
+    <Container className="border-y-0 px-8 py-20 flex flex-col gap-12">
       {/* Header */}
-      <div className="border-y-medium-gray flex flex-col items-start justify-between pt-14 gap-4 border border-x-0 border-t-0 p-4 sm:p-8 lg:flex-row lg:items-center lg:gap-6 lg:p-12 lg:pt-20">
+      <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="max-w-xl">
           <SectionHeader
             tag="Orchestrate Deliveries"
@@ -131,8 +131,8 @@ export default function OrchestrateDeliveries() {
       </div>
 
       {/* Animated Tabs */}
-      <div className="relative flex flex-col items-start gap-8 px-4 py-4 sm:px-6 md:px-8 lg:flex-row lg:gap-36 lg:px-12">
-        <div className="flex flex-row flex-wrap gap-2 lg:w-auto lg:flex-col lg:gap-0">
+      <div className="relative flex flex-col items-start gap-8">
+        <div className="flex flex-row flex-wrap gap-2 lg:w-auto lg:flex-col lg:gap-0 absolute z-20 top-6">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
@@ -181,9 +181,8 @@ export default function OrchestrateDeliveries() {
               delay: 0.2, // Small delay for better effect
             }}
           >
-            <div className="h-auto w-full">
+            <div className="h-auto w-full flex items-center justify-center">
               <Lottie
-              
                 lottieRef={lottieRef}
                 animationData={animationData}
                 autoplay={true}
@@ -191,10 +190,13 @@ export default function OrchestrateDeliveries() {
                 onComplete={handleLottieComplete}
                 style={{
                   width: "100%",
+                  maxWidth: "90%",
                   height: "auto",
                 }}
                 className="rounded"
               />
+              <div className="absolute inset-0 bg-linear-to-b from-transparent from-95% to-background" />
+
             </div>
           </motion.div>
         </div>

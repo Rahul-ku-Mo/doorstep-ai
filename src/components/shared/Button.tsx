@@ -24,7 +24,7 @@ const buttonVariants = {
 
 const sizeVariants = {
   sm: "h-8 px-3 py-1 text-xs",
-  md: "h-10 px-3 py-2 text-sm sm:px-6 sm:py-3 sm:text-base",
+  md: "h-10 px-3 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm",
   lg: "h-12 px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
 };
 
