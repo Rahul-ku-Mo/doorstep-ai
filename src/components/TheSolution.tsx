@@ -11,14 +11,14 @@ export default function TheSolution() {
   const tooltipData = [
     {
       id: "building-entrance",
-      position: { top: "50%", left: "41.5%" },
+      position: { top: "44.5%", left: "40.1%" },
       title: "Entered Building - Main Entrance Lobby",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/gate.svg",
     },
     {
       id: "dropped-package",
-      position: { top: "58%", left: "33.5%" },
+      position: { top: "52%", left: "32%" },
       title: "Driver dropped off package",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/package.svg",
@@ -26,7 +26,7 @@ export default function TheSolution() {
 
     {
       id: "ascend-floors",
-      position: { top: "62%", left: "28%" },
+      position: { top: "53.8%", left: "24.3%" },
       title: "Driver ascend -4-5 floors",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/stairs.svg",
@@ -54,17 +54,17 @@ export default function TheSolution() {
         </div>
 
         <motion.div
-          className="relative overflow-hidden px-4 sm:px-6 md:px-8"
+          className="relative overflow-hidden p-4 sm:p-6 md:p-8"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <div className="relative">
             {/* Desktop/Tablet Image - Hidden on mobile */}
             <div className="hidden sm:block">
               <Image
-                src="/dashboard-new.png"
+                src="/dashboard-new.svg"
                 alt="Solution"
                 width={1152}
                 height={720}
@@ -158,16 +158,19 @@ export default function TheSolution() {
         {/* Feature Cards */}
         <motion.div
           className="border-y-medium-gray grid grid-cols-1 gap-4 border border-x-0 sm:grid-cols-2 lg:grid-cols-4"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
           {/* Manual review made easy */}
           <motion.div
             className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -2 }}
-            transition={{ duration: 0.2 }}
           >
             <Image
               src="./event.svg"
@@ -189,8 +192,11 @@ export default function TheSolution() {
           {/* Automate workflows */}
           <motion.div
             className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -2 }}
-            transition={{ duration: 0.2 }}
           >
             <Image src="./door.svg" width={24} height={24} alt="automate" />
 
@@ -207,8 +213,11 @@ export default function TheSolution() {
           {/* Smarter route optimization */}
           <motion.div
             className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -2 }}
-            transition={{ duration: 0.2 }}
           >
             <Image
               src="./location.svg"
@@ -229,8 +238,11 @@ export default function TheSolution() {
           {/* Wayfinding (Coming soon) */}
           <motion.div
             className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8 mb-4 sm:mb-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -2 }}
-            transition={{ duration: 0.2 }}
           >
             <Image src="./gear.svg" width={24} height={24} alt="wayfinding" />
             <div>

@@ -46,9 +46,9 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.div
-        className="border-x-medium-gray border-b border-b-medium-gray mx-auto w-full border-x p-4 sm:px-6 lg:px-8 bg-background"
+        className="border-x-medium-gray border-b-medium-gray bg-background mx-auto w-full border-x border-b p-4 sm:px-6 lg:px-8"
         animate={{
-          backgroundColor: isScrolled ? "#fafafa": "#fafafa",
+          backgroundColor: isScrolled ? "#fafafa" : "#fafafa",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
@@ -61,50 +61,27 @@ export default function Header() {
           >
             <div className="flex items-center space-x-2">
               <Image
-                src="/Logo.svg"
-                alt="Doorstep.ai"
-                width={180}
-                height={42}
-                className="hidden h-auto w-auto sm:block"
-              />
-
-              <Image
                 src="/mobile-logo.svg"
                 alt="Doorstep.ai"
                 width={36}
                 height={36}
-                className="block h-auto w-auto sm:hidden"
+                className="block h-auto w-auto"
               />
             </div>
           </motion.div>
 
           {/* Right side buttons */}
           <div className="flex items-center gap-8">
-            <Button
-              variant="ghost"
-              className="hidden sm:flex"
-              icon={<ArrowUpRight className="size-4" />}
-              iconPosition="left"
-            >
+            <Button variant="ghost" className="hidden sm:flex">
               Join the Team
             </Button>
-            <Button
-              variant="ghost"
-              className="hidden sm:flex"
-              icon={<ArrowUpRight className="size-4" />}
-              iconPosition="left"
-            >
+            <Button variant="ghost" className="hidden sm:flex">
               SDK Docs
             </Button>
             <Button
-              variant="outline"
-              className="!px-3"
-              icon={
-                <Circle className="fill-primary text-primary bg-secondary size-4 rounded-full px-0.5" />
-              }
-              iconPosition="left"
+              variant="primary"
             >
-              Get a Demo
+             View the Dashboard
             </Button>
           </div>
         </div>

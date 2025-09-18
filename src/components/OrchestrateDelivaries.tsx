@@ -15,10 +15,9 @@ const Lottie = dynamic(() => import("lottie-react"), {
   ),
 });
 
-
 // Import your Lottie JSON file
 import animationData from "@/components/shared/dektop-animation.json";
-import phoneLottieData from "@/components/shared/phone-animation.json"
+import phoneLottieData from "@/components/shared/phone-animation.json";
 
 export default function OrchestrateDeliveries() {
   const [activeSection, setActiveSection] = useState(0);
@@ -134,7 +133,7 @@ export default function OrchestrateDeliveries() {
 
       {/* Animated Tabs */}
       <div className="relative flex flex-col items-start gap-8">
-        <div className="absolute z-20 flex flex-row flex-wrap gap-2 -top-2 sm:top-6 lg:w-auto lg:flex-col lg:gap-0">
+        <div className="absolute -top-2 z-20 flex flex-row flex-wrap gap-2 sm:top-6 lg:w-auto lg:flex-col lg:gap-0">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
@@ -175,12 +174,13 @@ export default function OrchestrateDeliveries() {
 
         <div className="relative mt-6 flex w-full flex-1 justify-center lg:mt-0 lg:w-auto lg:justify-start">
           <motion.div
-            initial={{ opacity: 0, y: 50 }} // Fade in from bottom
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.8,
               ease: "easeOut",
-              delay: 0.2, // Small delay for better effect
+              delay: 0.2,
             }}
           >
             <div className="flex h-auto w-full items-center justify-center">
@@ -198,7 +198,7 @@ export default function OrchestrateDeliveries() {
                   }}
                 />
               </div>
-              
+
               {/* Mobile Animation */}
               <div className="block sm:hidden">
                 <Lottie
@@ -212,11 +212,9 @@ export default function OrchestrateDeliveries() {
                   }}
                 />
               </div>
-              
+
               <div className="to-background absolute inset-0 bg-linear-to-b from-transparent from-95%" />
             </div>
-
-            
           </motion.div>
         </div>
       </div>

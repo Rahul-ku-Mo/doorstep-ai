@@ -128,10 +128,24 @@ body {
   grid-template-columns: repeat(16, minmax(0, 1fr));
 }
 
-/* Smooth transitions */
-* {
+/* Smooth transitions - exclude motion elements to avoid conflicts */
+*:not([data-framer-motion]) {
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
     border-color 0.2s ease;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* GPU acceleration for better animation performance */
+.motion-safe\:transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

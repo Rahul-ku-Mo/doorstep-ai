@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "./shared";
+import { Circle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -21,10 +22,10 @@ export default function Footer() {
         <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-start justify-center gap-6 border px-4 py-10 sm:items-center lg:flex-row lg:px-8 lg:py-20">
           <motion.div
             className="sm:text-4.5xl text-primary max-w-xl text-left text-3xl font-normal lg:max-w-3xl lg:gap-16"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <span className="text-black">
               Scale delivery operations without compromising
@@ -34,23 +35,30 @@ export default function Footer() {
           <div className="flex items-center justify-center">
             <motion.div
               className="flex items-center justify-start gap-2 sm:gap-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <Button variant="default" className="!px-3">
-                Visit Docs
+              <Button variant="ghost" className="!px-3">
+                SDK Docs
               </Button>
-              <Button variant="outline" className="!px-3">
-                Talk to an Expert
+              <Button
+                iconPosition="left"
+                icon={
+                  <Circle className="fill-primary bg-secondary size-4 rounded-full p-0.5" />
+                }
+                variant="outline"
+                className="text-accent border-medium-gray"
+              >
+                Contact Us
               </Button>
             </motion.div>
           </div>
         </div>
         {/* Decorative bar below */}
         <Image
-          src="/bottom.svg"
+          src="/top.svg"
           width={1152}
           height={101}
           alt="bottom"
@@ -64,8 +72,15 @@ export default function Footer() {
           {/* Products */}
 
           <div className="flex flex-col gap-4">
-            <Image src="/Logo.svg" width={180} height={44} alt="Logo" />
-
+            <Image src="/mobile-logo.svg" width={48} height={48} alt="Logo" />
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col gap-8"
+          >
             <div className="font-geist-mono text-accent w-full max-w-40 text-sm">
               33 West 17th Street New York, 10011 United States
             </div>
@@ -85,55 +100,6 @@ export default function Footer() {
                 alt="facebook"
               />
             </div>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <ul className="space-y-3 text-base">
-              <li>
-                <motion.a
-                  href="#"
-                  className="group flex items-center gap-1.5 underline-offset-4 transition-colors"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span className="transition-all duration-200 group-hover:text-black group-hover:underline">
-                    {" "}
-                    Careers{" "}
-                  </span>
-                  <motion.span
-                    className="text-primary border-secondary font-geist-mono rounded-full border bg-white px-1 py-0.5 text-[10px] shadow-sm"
-                    whileHover={{ scale: 1.1, rotate: 2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    We&apos;re hiring
-                  </motion.span>
-                </motion.a>
-              </li>
-              <li>
-                <motion.a
-                  href="#"
-                  className="inline-block underline-offset-4 transition-colors hover:text-black hover:underline"
-                  whileHover={{ x: 5, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Documentation
-                </motion.a>
-              </li>
-              <li>
-                <motion.a
-                  href="#"
-                  className="inline-block underline-offset-4 transition-colors hover:text-black hover:underline"
-                  whileHover={{ x: 5, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Contact
-                </motion.a>
-              </li>
-            </ul>
           </motion.div>
         </div>
       </section>

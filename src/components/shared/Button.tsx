@@ -38,7 +38,7 @@ export default function Button({
   icon,
   iconPosition = "right"
 }: ButtonProps) {
-  const baseClasses = "group relative inline-flex cursor-pointer items-center justify-center rounded-none font-normal text-1.5xl whitespace-nowrap transition-all ease-linear font-geist-mono uppercase";
+  const baseClasses = "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-normal text-1.5xl whitespace-nowrap transition-all ease-linear font-geist-mono uppercase !font-light";
   
   return (
     <button
@@ -54,7 +54,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      <span className="relative flex items-center gap-2">
+      <span className="relative flex items-center gap-2 font-">
         {icon && iconPosition === "left" && (
           <div>
             {icon}
