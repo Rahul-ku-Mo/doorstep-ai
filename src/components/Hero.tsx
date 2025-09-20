@@ -51,8 +51,8 @@ export default function Hero() {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 1.5 + index * 0.2, // Start after hero background, stagger by 0.2s
-        duration: 0.5,
+        delay: 0.75 + index * 0.1, // Start after hero background, stagger by 0.2s
+        duration: 0.25,
         ease: "easeOut" as const,
       },
     }),
@@ -61,52 +61,45 @@ export default function Hero() {
   // Path animation variants (left to right)
   const drawHorizontalPath: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { duration: 0.6, ease: "easeInOut" },
-        opacity: { duration: 0.1 },
-      },
-    },
-  };
-
-  // Path animation variants for L-shaped paths (horizontal first, then vertical)
-  const drawLPathHorizontal: Variants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { duration: 0.35, ease: "easeInOut" },
-        opacity: { duration: 0.1 },
-      },
+    visible: (i: number) => {
+      const delay = i * 0.1; // Small stagger for multiple paths
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 0.6, bounce: 0 },
+          opacity: { delay, duration: 0.01 },
+        },
+      };
     },
   };
 
   const drawLPathVertical: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        delay: 0.5, // Start after horizontal completes (0.4s duration + 0.1s buffer)
-        pathLength: { duration: 0.4, ease: "easeInOut" },
-        opacity: { duration: 0.1 },
-      },
+    visible: (i: number) => {
+      const delay = (i * 0.1) + 0.4; // Start after horizontal path completes
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 0.6, bounce: 0 },
+          opacity: { delay, duration: 0.01 },
+        },
+      };
     },
   };
 
   const infoBoxAnimation: Variants = {
     hidden: {
       opacity: 0,
-      y: -20,
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
-      y: 0,
+      scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
+        delay: 0.75, // Appears after L-shaped path completes (0.6 + 0.6 = 1.2s)
         ease: "easeOut",
       },
     },
@@ -116,14 +109,14 @@ export default function Hero() {
   const infoBoxAnimationRegular: Variants = {
     hidden: {
       opacity: 0,
-      y: -20,
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
-
-      y: 0,
+      scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
+        delay: 0.7, // Appears after horizontal path completes (0.6s + 0.1s buffer)
         ease: "easeOut",
       },
     },
@@ -143,11 +136,11 @@ export default function Hero() {
 
   // Door positions data
   const doorData = [
-    { className: "absolute top-50 left-30", id: 0 },
-    { className: "absolute top-50 right-20", id: 1 },
+    { className: "absolute top-55 left-50", id: 0 },
+    { className: "absolute top-50 right-40", id: 1 },
     { className: "absolute top-100 left-10", id: 2 },
     { className: "absolute bottom-50 left-30", id: 3 },
-    { className: "absolute bottom-50 right-0", id: 4 },
+    { className: "absolute bottom-50 right-20", id: 4 },
     { className: "absolute bottom-5 left-1/2", id: 5 },
   ];
 
@@ -208,15 +201,17 @@ export default function Hero() {
           };
 
         case 3: // bottom-50 left-30 - left positioned door (horizontal path)
+
+        console.log(doorPos.y, panelHeight )
           return {
             x: doorPos.x + pathLength + 20, // Right of the path
-            y: doorPos.y - panelHeight / 2,
+            y: doorPos.y - panelHeight + 10,
           };
 
         case 4: // bottom-50 right-0 - right positioned door (horizontal path)
           return {
-            x: doorPos.x - pathLength - panelWidth + 10, // Left of the path
-            y: doorPos.y - panelHeight / 2,
+            x: doorPos.x - pathLength - panelWidth - 20, // Left of the path
+            y: doorPos.y - panelHeight + 10,
           };
 
         case 5: // bottom-5 left-1/2 - center positioned door (vertical path)
@@ -243,7 +238,7 @@ export default function Hero() {
         className="relative h-[100dvh] w-full overflow-hidden pt-12"
       >
         {/* Hero Content */}
-        <div className="border-medium-gray relative z-20 mx-auto flex min-h-full max-w-[1152px] items-end border border-x border-y-0 px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
+        <div className="border-medium-gray relative z-20 mx-auto flex min-h-full items-end border border-x border-y-0 px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
           <motion.div
             className="relative z-20 flex max-w-xl flex-col gap-2 text-left motion-safe:transform-gpu sm:mx-auto"
             variants={containerVariants}
@@ -362,7 +357,8 @@ export default function Hero() {
                   strokeDasharray="8,4"
                   strokeLinecap="square"
                   fill="none"
-                  variants={drawLPathHorizontal}
+                  custom={0}
+                  variants={drawHorizontalPath}
                   initial="hidden"
                   animate="visible"
                 />
@@ -384,6 +380,7 @@ export default function Hero() {
                   strokeWidth="2"
                   strokeDasharray="8,4"
                   strokeLinecap="square"
+                  custom={1}
                   fill="none"
                   variants={drawLPathVertical}
                   initial="hidden"
@@ -404,7 +401,8 @@ export default function Hero() {
                   strokeDasharray="8,4"
                   strokeLinecap="square"
                   fill="none"
-                  variants={drawLPathHorizontal}
+                  custom={0}
+                  variants={drawHorizontalPath}
                   initial="hidden"
                   animate="visible"
                 />
@@ -419,6 +417,7 @@ export default function Hero() {
                   strokeDasharray="8,4"
                   strokeLinecap="square"
                   fill="none"
+                  custom={1}
                   variants={drawLPathVertical}
                   initial="hidden"
                   animate="visible"
@@ -436,6 +435,7 @@ export default function Hero() {
                 strokeDasharray="8,4"
                 strokeLinecap="square"
                 fill="none"
+                custom={0}
                 variants={drawHorizontalPath}
                 initial="hidden"
                 animate="visible"
@@ -458,6 +458,7 @@ export default function Hero() {
                 strokeDasharray="8,4"
                 strokeLinecap="square"
                 fill="none"
+                custom={0}
                 variants={drawHorizontalPath}
                 initial="hidden"
                 animate="visible"

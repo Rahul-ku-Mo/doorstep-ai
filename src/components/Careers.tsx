@@ -197,13 +197,7 @@ export default function Careers() {
           alt="top"
           className="mx-auto"
         />
-        <motion.div
-          className="border-x-medium-gray relative overflow-hidden rounded-lg border-x bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 lg:p-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-        >
+        <div className="border-medium-gray relative overflow-hidden border bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 lg:p-12">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="h-full w-full bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[length:20px_20px]"></div>
@@ -228,7 +222,7 @@ export default function Careers() {
               </Button>
             </div>
           </div>
-        </motion.div>
+        </div>
         <Image
           src="/top.svg"
           width={1152}

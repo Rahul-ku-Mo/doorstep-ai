@@ -16,7 +16,7 @@ const Lottie = dynamic(() => import("lottie-react"), {
 });
 
 // Import your Lottie JSON file
-import animationData from "@/components/shared/dektop-animation.json";
+import animationData from "@/components/shared/desktop-animation.json";
 import phoneLottieData from "@/components/shared/phone-animation.json";
 
 export default function OrchestrateDeliveries() {
@@ -133,12 +133,12 @@ export default function OrchestrateDeliveries() {
 
       {/* Animated Tabs */}
       <div className="relative flex flex-col items-start gap-8">
-        <div className="absolute -top-2 z-20 flex flex-row flex-wrap gap-2 sm:top-6 lg:w-auto lg:flex-col lg:gap-0">
+        <div className="absolute -top-2 z-20 flex flex-row flex-wrap gap-2 sm:top-6 lg:w-auto lg:flex-col lg:gap-2">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
               onClick={() => handleSectionClick(index)}
-              className={`font-geist-mono relative mb-3 flex items-center gap-2 rounded-lg px-2 py-2 text-xs whitespace-nowrap uppercase transition-all duration-200 sm:text-base ${
+              className={`font-geist-mono relative flex items-center gap-2 rounded-lg px-2 py-2 text-xs whitespace-nowrap uppercase transition-all duration-200 sm:text-base ${
                 activeSection === index
                   ? "text-black"
                   : "hover:text-primary text-[#666666]/60"
@@ -148,7 +148,7 @@ export default function OrchestrateDeliveries() {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="bg-primary size-2 sm:size-3"
+                className="bg-primary size-2"
                 animate={{
                   scale: activeSection === index ? 1.2 : 1,
                   opacity: activeSection === index ? 1 : 0.6,
@@ -158,10 +158,10 @@ export default function OrchestrateDeliveries() {
               {section.title}
               {/* Animated underline with 4-second duration */}
               <motion.div
-                className="bg-primary absolute bottom-0 left-0 h-0.5"
+                className="bg-primary absolute bottom-0 left-0 h-0.5 ml-6"
                 initial={{ width: 0 }}
                 animate={{
-                  width: activeSection === index ? "100%" : "0%",
+                  width: activeSection === index ? "80%" : "0%",
                 }}
                 transition={{
                   duration: activeSection === index ? 5 : 0.5,

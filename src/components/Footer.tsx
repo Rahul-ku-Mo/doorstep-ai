@@ -20,7 +20,7 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
             className="mx-auto"
           />
 
-          <div className="border-medium-gray bg-card mx-auto flex w-full max-w-[1152px] flex-col items-start justify-center gap-6 border px-4 py-10 sm:items-center lg:flex-row lg:px-8 lg:py-20">
+          <div className={`border-medium-gray bg-[url("/dotted.svg")] mx-auto flex w-full max-w-[1152px] flex-col items-start justify-center gap-6 border px-4 py-10 sm:items-center lg:flex-row lg:px-8 lg:py-20`}>
             <motion.div
               className="sm:text-4.5xl text-primary max-w-xl text-left text-3xl font-normal lg:max-w-3xl lg:gap-16"
               initial={{ opacity: 0, y: 30 }}
@@ -41,18 +41,22 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
-                <Button variant="ghost" className="!px-3">
+                <Button
+                  variant="ghost"
+                  className="!px-3 hover:text-primary"
+                  onClick={() => {
+                    window.location.href = "https://docs.doorstep.ai/";
+                  }}
+                >
                   SDK Docs
                 </Button>
                 <Button
-                  iconPosition="left"
-                  icon={
-                    <Circle className="fill-primary bg-secondary size-4 rounded-full p-0.5" />
-                  }
                   variant="outline"
-                  className="text-accent border-medium-gray"
+                  className="text-black border-medium-gray bg-card hover:bg-card hover:border-primary group"
                 >
-                  Contact Us
+                  <a href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat" className="group-hover:text-primary">
+                    Contact Us
+                  </a>
                 </Button>
               </motion.div>
             </div>
@@ -104,8 +108,6 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
               />
             </div>
           </motion.div>
-
-         
         </div>
       </section>
 

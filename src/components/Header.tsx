@@ -52,7 +52,7 @@ export default function Header() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex items-center justify-between cursor-pointer">
+        <div className="flex cursor-pointer items-center justify-between">
           {/* Logo */}
           <motion.div
             onClick={() => (window.location.href = "/")}
@@ -74,10 +74,24 @@ export default function Header() {
           {/* Right side buttons */}
           <div className="flex items-center gap-8">
             <Button variant="ghost" className="hidden sm:flex">
-              <a href="/careers">Join the team</a>
+              <a
+                href="/careers"
+                className="hover:text-primary transition ease-in"
+              >
+                Join the team
+              </a>
             </Button>
-            <Button variant="ghost" className="hidden sm:flex">
-              SDK Docs
+            <Button
+              variant="ghost"
+              className="hover:text-primary hidden sm:flex"
+            >
+              <a
+                href="https://docs.doorstep.ai/"
+                target="_blank"
+                className="hover:text-primary transition ease-in"
+              >
+                SDK Docs
+              </a>
             </Button>
             <Button variant="primary">View the Dashboard</Button>
           </div>

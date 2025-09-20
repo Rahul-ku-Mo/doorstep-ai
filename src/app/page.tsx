@@ -15,7 +15,7 @@ export default function Home() {
       <TheSolution />
       <OrchestrateDelivaries />
       <Integration />
-      <Footer />
+      <Footer withBar/>
     </main>
   );
 }

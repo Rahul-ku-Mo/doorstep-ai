@@ -15,7 +15,7 @@ interface ButtonProps {
 }
 
 const buttonVariants = {
-  primary: "border border-blue-600 bg-blue-600 text-white shadow-lg hover:border-blue-700 hover:bg-blue-700 hover:shadow-xl",
+  primary: "border border-blue-600 bg-blue-600 text-white shadow-lg hover:border-blue-700 hover:bg-blue-700",
   secondary: "border border-gray-200 bg-white/80 text-black backdrop-blur-sm hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600",
   outline: "border border-primary bg-transparent text-primary hover:bg-primary/10",
   default: "border border-gray-300 bg-black text-white hover:bg-[#000000]",
@@ -38,7 +38,7 @@ export default function Button({
   icon,
   iconPosition = "right"
 }: ButtonProps) {
-  const baseClasses = "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-normal text-1.5xl whitespace-nowrap transition-all ease-linear font-geist-mono uppercase !font-light";
+  const baseClasses = "group relative inline-flex !cursor-pointer items-center justify-center rounded-full font-normal text-1.5xl whitespace-nowrap transition-all ease-linear font-geist-mono uppercase !font-light";
   
   return (
     <button

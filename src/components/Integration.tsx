@@ -38,48 +38,127 @@ export default function Integration() {
       icon: "/android.svg",
       title: "Integration in ~4 simple steps",
       problems: [
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "No in-building proof" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Disputes escalate" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "False claims slip" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Refunds spiral out" }
-      ]
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "No in-building proof",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Disputes escalate",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "False claims slip",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Refunds spiral out",
+        },
+      ],
     },
     {
       icon: "/flutter.svg",
       title: "Integration in ~4 simple steps",
       problems: [
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "No in-building proof" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Disputes escalate" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "False claims slip" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Refunds spiral out" }
-      ]
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "No in-building proof",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Disputes escalate",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "False claims slip",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Refunds spiral out",
+        },
+      ],
     },
     {
       icon: "/ios.svg",
       title: "Integration in ~4 simple steps",
       problems: [
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "No in-building proof" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Disputes escalate" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "False claims slip" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Refunds spiral out" }
-      ]
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "No in-building proof",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Disputes escalate",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "False claims slip",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Refunds spiral out",
+        },
+      ],
     },
     {
       icon: "/react-icon.svg",
       title: "Integration in ~4 simple steps",
       problems: [
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "No in-building proof" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Disputes escalate" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "False claims slip" },
-        { icon: <CircleCheck className="size-4 text-white fill-accent" />, text: "Refunds spiral out" }
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "No in-building proof",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Disputes escalate",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "False claims slip",
+        },
+        {
+          icon: <CircleCheck className="fill-accent size-4 text-white" />,
+          text: "Refunds spiral out",
+        },
+      ],
+    },
+  ];
+
+  const integrationContent = [
+    {
+      icon: "/react-icon.svg", // Using atom-like icon placeholder
+      title: "How does doorstep's technology work?",
+      description: "",
+      features: []
+    },
+    {
+      icon: "/flutter.svg", // Using atom-like icon placeholder
+      title: "How does doorstep's technology work?",
+      description: "",
+      features: [
+        "Automatic detection of stairs vs. elevator usage",
+        "Verification of the floor reached", 
+        "Flagging anomalies in vertical movement"
       ]
+    },
+    {
+      icon: "/android.svg",
+      title: "How does doorstep's technology work?",
+      description: "",
+      features: []
+    },
+    {
+      icon: "/ios.svg",
+      title: "How does doorstep's technology work?",
+      description: "Our team of top PHDs and researchers have spent years to build out physics-based sensor fusion algorithms, to solve the more critical outdoor to indoor positioning problem.",
+      features: []
     }
   ];
 
   const tabs = [
     { id: 0, name: "Integration", label: "INTEGRATION" },
     { id: 1, name: "Frameworks", label: "FRAMEWORKS" },
-    { id: 2, name: "Touchpoints", label: "TOUCHPOINTS" }
+    { id: 2, name: "Touchpoints", label: "TOUCHPOINTS" },
   ];
 
   return (
@@ -111,7 +190,9 @@ export default function Integration() {
               onClick={() => setActiveTab(tab.id)}
               className={clsx(
                 "flex items-center gap-2 uppercase transition-colors duration-300",
-                activeTab === tab.id ? "text-primary" : "text-accent"
+                activeTab === tab.id
+                  ? "text-primary underline underline-offset-8"
+                  : "text-accent",
               )}
             >
               {activeTab === tab.id && (
@@ -129,11 +210,23 @@ export default function Integration() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          <Button variant="outline" className="px-6 py-2 text-sm">
-            GET A DEMO
+          <Button
+            variant="outline"
+            className="border-medium-gray bg-card hover:bg-card hover:border-primary group text-black"
+          >
+            <a
+              href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat"
+              className="group-hover:text-primary"
+            >
+              Get a demo
+            </a>
           </Button>
           <Button variant="primary" className="px-6 py-2 text-sm">
-            CONTACT US
+            <a
+              href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat"
+            >
+              contact us
+            </a>
           </Button>
         </motion.div>
       </div>
@@ -145,14 +238,59 @@ export default function Integration() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        {/* Tab 1: Integration (Placeholder) */}
+        {/* Tab 1: Integration */}
         {activeTab === 0 && (
-          <div className="flex min-h-[360px] items-center justify-center px-4">
-            <div className="text-center">
-              <h3 className="mb-4 text-2xl font-medium text-black">Integration Tab</h3>
-              <p className="text-accent text-lg">Placeholder content for Integration tab</p>
-              <p className="text-accent mt-2 text-sm">This will contain integration-specific content</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {integrationContent.map((item, index) => (
+              <motion.div
+                key={index}
+                className={clsx(
+                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-6",
+                  (index === 0 || index === 2) &&
+                    "border-r-medium-gray border-r",
+                )}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4 + index * 0.1,
+                  ease: "easeOut",
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={item.icon}
+                    width={32}
+                    height={32}
+                    alt="Integration icon"
+                    className="size-8"
+                  />
+                  <h3 className="text-lg font-medium text-black">
+                    {item.title}
+                  </h3>
+                </div>
+                
+                {item.features.length > 0 && (
+                  <div className="space-y-3">
+                    {item.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-3">
+                        <CircleCheck className="fill-accent size-4 text-white" />
+                        <span className="text-accent text-sm">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {item.description && (
+                  <p className="text-accent text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                )}
+              </motion.div>
+            ))}
           </div>
         )}
 
@@ -164,13 +302,14 @@ export default function Integration() {
                 key={framework.name}
                 className={clsx(
                   "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-4 border-y p-4",
-                  (index === 0 || index == 2) && "border-r-medium-gray border-r",
+                  (index === 0 || index == 2) &&
+                    "border-r-medium-gray border-r",
                 )}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  background: "#ebebeb"
+                  background: "#f5f5f5",
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
@@ -185,7 +324,7 @@ export default function Integration() {
                   {framework.text}{" "}
                   <motion.span className="inline-flex items-center text-black">
                     in less than 1 hour
-                    <ChevronRight className="size-4 mt-0.5" />
+                    <ChevronRight className="mt-0.5 size-4" />
                   </motion.span>
                 </div>
               </motion.div>
@@ -201,12 +340,17 @@ export default function Integration() {
                 key={index}
                 className={clsx(
                   "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-6",
-                  (index === 0 || index === 2) && "border-r-medium-gray border-r",
+                  (index === 0 || index === 2) &&
+                    "border-r-medium-gray border-r",
                 )}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4 + index * 0.1,
+                  ease: "easeOut",
+                }}
               >
                 <div className="flex items-center gap-3">
                   <Image
@@ -216,13 +360,17 @@ export default function Integration() {
                     alt="Touchpoint icon"
                     className="size-8"
                   />
-                  <h3 className="text-lg font-medium text-black">{touchpoint.title}</h3>
+                  <h3 className="text-lg font-medium text-black">
+                    {touchpoint.title}
+                  </h3>
                 </div>
                 <div className="space-y-3">
                   {touchpoint.problems.map((problem, problemIndex) => (
                     <div key={problemIndex} className="flex items-center gap-3">
                       {problem.icon}
-                      <span className="text-accent text-sm">{problem.text}</span>
+                      <span className="text-accent text-sm">
+                        {problem.text}
+                      </span>
                     </div>
                   ))}
                 </div>
