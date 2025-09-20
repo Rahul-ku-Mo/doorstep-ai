@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Circle } from "lucide-react";
+// Removed unused imports
 import { motion } from "framer-motion";
 import { Button } from "./shared";
 
@@ -73,7 +73,7 @@ export default function Header() {
           {/* Right side buttons */}
           <div className="flex items-center gap-8">
             <Button variant="ghost" className="hidden sm:flex">
-              Join the Team
+              <a href="/careers">Join the team</a>
             </Button>
             <Button variant="ghost" className="hidden sm:flex">
               SDK Docs

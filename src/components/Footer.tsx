@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { Button } from "./shared";
 import { Circle } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ withBar = false }: { withBar?: boolean }) {
   return (
     <footer className="w-full">
       {/* Main CTA Section */}
-      <section className="border-medium-gray w-full border">
+    {withBar && (  <section className="border-medium-gray w-full border">
         {/* Decorative bar above */}
         <Image
           src="/top.svg"
@@ -64,16 +64,17 @@ export default function Footer() {
           alt="bottom"
           className="mx-auto"
         />
-      </section>
+      </section>)}
 
       {/* Navigation Links */}
       <section className="border-x-medium-gray mx-auto max-w-[1152px] border border-y-0 px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="flex flex-wrap items-start justify-between gap-10">
-          {/* Products */}
-
+          {/* Logo */}
           <div className="flex flex-col gap-4">
             <Image src="/mobile-logo.svg" width={48} height={48} alt="Logo" />
           </div>
+
+          {/* Address and Social */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,6 +101,26 @@ export default function Footer() {
                 alt="facebook"
               />
             </div>
+          </motion.div>
+
+          {/* Navigation Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col gap-2"
+          >
+            <a href="/careers" className="text-sm text-black hover:text-primary">
+              Careers
+            </a>
+            <span className="text-sm text-primary">We&apos;re hiring</span>
+            <a href="#" className="text-sm text-black hover:text-primary">
+              Documentation
+            </a>
+            <a href="#" className="text-sm text-black hover:text-primary">
+              Contact
+            </a>
           </motion.div>
         </div>
       </section>

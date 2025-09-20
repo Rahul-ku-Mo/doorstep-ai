@@ -81,12 +81,11 @@ export default function TheProblem() {
                   </div>
                   <motion.p 
                     className="max-w-md text-base text-accent"
-                    key={activeTab}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
-                    {features[activeTab].description}
+                    Detect vertical movement with proof of how drivers move inside.
                   </motion.p>
                 </motion.div>
 

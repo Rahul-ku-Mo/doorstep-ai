@@ -11,7 +11,6 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "./shared";
 import { clsx } from "clsx";
 
-
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
@@ -79,7 +78,7 @@ export default function Hero() {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 0.4, ease: "easeInOut" },
+        pathLength: { duration: 0.35, ease: "easeInOut" },
         opacity: { duration: 0.1 },
       },
     },
@@ -101,15 +100,12 @@ export default function Hero() {
   const infoBoxAnimation: Variants = {
     hidden: {
       opacity: 0,
-      scale: 0.9,
-      x: -20,
+      y: -20,
     },
     visible: {
       opacity: 1,
-      scale: 1,
-      x: 0,
+      y: 0,
       transition: {
-        delay: 1.0, // Start after L-shaped path completes (0.5s + 0.4s + 0.1s buffer)
         duration: 0.5,
         ease: "easeOut",
       },
@@ -120,15 +116,13 @@ export default function Hero() {
   const infoBoxAnimationRegular: Variants = {
     hidden: {
       opacity: 0,
-      scale: 0.9,
-      x: -20,
+      y: -20,
     },
     visible: {
       opacity: 1,
-      scale: 1,
-      x: 0,
+
+      y: 0,
       transition: {
-        delay: 0.7, // Start after regular path completes
         duration: 0.5,
         ease: "easeOut",
       },
@@ -140,7 +134,10 @@ export default function Hero() {
   const [doorPositions, setDoorPositions] = useState<
     Array<{ x: number; y: number }>
   >([]);
-  const [panelPosition, setPanelPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [panelPosition, setPanelPosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
   const doorRefs = useRef<Array<HTMLDivElement | null>>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -148,12 +145,11 @@ export default function Hero() {
   const doorData = [
     { className: "absolute top-50 left-30", id: 0 },
     { className: "absolute top-50 right-20", id: 1 },
-    { className: "absolute top-70 left-10", id: 2 },
+    { className: "absolute top-100 left-10", id: 2 },
     { className: "absolute bottom-50 left-30", id: 3 },
     { className: "absolute bottom-50 right-0", id: 4 },
     { className: "absolute bottom-5 left-1/2", id: 5 },
   ];
-
 
   // Update door positions for path animation
   useEffect(() => {
@@ -182,52 +178,53 @@ export default function Hero() {
   // Update panel position when door is hovered
   useEffect(() => {
     const calculatePanelPosition = (doorIndex: number) => {
-      if (!containerRef.current || !doorPositions[doorIndex]) return { x: 0, y: 0 };
-      
+      if (!containerRef.current || !doorPositions[doorIndex])
+        return { x: 0, y: 0 };
+
       const doorPos = doorPositions[doorIndex];
       const panelWidth = 220; // Approximate panel width
       const panelHeight = 80; // Approximate panel height
       const pathLength = 150; // Length of the horizontal path
       const verticalPathLength = 80; // Length of the vertical path
-      
+
       // Explicit positioning for each door (desktop-only, no dynamic calculations)
       switch (doorIndex) {
         case 0: // top-50 left-30 - L-shaped path (horizontal right + vertical up)
           return {
             x: doorPos.x + 100 - panelWidth / 2, // Center with the vertical segment
-            y: doorPos.y - verticalPathLength - panelHeight - 20 // Above the vertical segment
+            y: doorPos.y - verticalPathLength - panelHeight - 20, // Above the vertical segment
           };
-          
+
         case 1: // top-50 right-20 - reverse L-shaped path (horizontal left + vertical up)
           return {
-            x: doorPos.x - 100 - panelWidth / 2, // Center with the vertical segment
-            y: doorPos.y - verticalPathLength - panelHeight - 20 // Above the vertical segment
+            x: doorPos.x - 100 - panelWidth / 2 + 10, // Center with the vertical segment
+            y: doorPos.y - verticalPathLength - panelHeight - 20, // Above the vertical segment
           };
-          
+
         case 2: // top-70 left-10 - L-shaped path (horizontal right + vertical up)
           return {
             x: doorPos.x + 100 - panelWidth / 2, // Center with the vertical segment
-            y: doorPos.y - verticalPathLength - panelHeight - 20 // Above the vertical segment
+            y: doorPos.y - verticalPathLength - panelHeight - 20, // Above the vertical segment
           };
-          
+
         case 3: // bottom-50 left-30 - left positioned door (horizontal path)
           return {
             x: doorPos.x + pathLength + 20, // Right of the path
-            y: doorPos.y - panelHeight / 2
+            y: doorPos.y - panelHeight / 2,
           };
-          
+
         case 4: // bottom-50 right-0 - right positioned door (horizontal path)
           return {
-            x: doorPos.x - pathLength - panelWidth - 20, // Left of the path
-            y: doorPos.y - panelHeight / 2
+            x: doorPos.x - pathLength - panelWidth + 10, // Left of the path
+            y: doorPos.y - panelHeight / 2,
           };
-          
+
         case 5: // bottom-5 left-1/2 - center positioned door (vertical path)
           return {
             x: doorPos.x - panelWidth / 2, // Center horizontally with door
-            y: doorPos.y - verticalPathLength - panelHeight - 20 // Above the vertical path
+            y: doorPos.y - verticalPathLength - panelHeight - 20, // Above the vertical path
           };
-          
+
         default:
           return { x: 0, y: 0 };
       }
@@ -252,7 +249,6 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
           >
             <motion.div
               className="decoration-medium-gray mb-2 flex items-center gap-1 underline decoration-dashed underline-offset-4"
@@ -321,8 +317,6 @@ export default function Hero() {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 h-full w-full"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1.2,
             ease: "easeOut",
@@ -351,13 +345,17 @@ export default function Hero() {
               <>
                 {/* Horizontal segment (left to right) */}
                 <motion.line
-                  x1={hoveredDoorIndex === 1 
-                    ? doorPositions[hoveredDoorIndex]?.x - 14 || 0 
-                    : doorPositions[hoveredDoorIndex]?.x + 14 || 0}
+                  x1={
+                    hoveredDoorIndex === 1
+                      ? doorPositions[hoveredDoorIndex]?.x - 14 || 0
+                      : doorPositions[hoveredDoorIndex]?.x + 14 || 0
+                  }
                   y1={doorPositions[hoveredDoorIndex]?.y || 0}
-                  x2={hoveredDoorIndex === 1 
-                    ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100 
-                    : (doorPositions[hoveredDoorIndex]?.x || 0) + 100}
+                  x2={
+                    hoveredDoorIndex === 1
+                      ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100
+                      : (doorPositions[hoveredDoorIndex]?.x || 0) + 100
+                  }
                   y2={doorPositions[hoveredDoorIndex]?.y || 0}
                   stroke="#1560ff"
                   strokeWidth="2"
@@ -370,13 +368,17 @@ export default function Hero() {
                 />
                 {/* Vertical segment (bottom to top) */}
                 <motion.line
-                  x1={hoveredDoorIndex === 1 
-                    ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100 
-                    : (doorPositions[hoveredDoorIndex]?.x || 0) + 100}
+                  x1={
+                    hoveredDoorIndex === 1
+                      ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100
+                      : (doorPositions[hoveredDoorIndex]?.x || 0) + 100
+                  }
                   y1={doorPositions[hoveredDoorIndex]?.y || 0}
-                  x2={hoveredDoorIndex === 1 
-                    ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100 
-                    : (doorPositions[hoveredDoorIndex]?.x || 0) + 100}
+                  x2={
+                    hoveredDoorIndex === 1
+                      ? (doorPositions[hoveredDoorIndex]?.x || 0) - 100
+                      : (doorPositions[hoveredDoorIndex]?.x || 0) + 100
+                  }
                   y2={(doorPositions[hoveredDoorIndex]?.y || 0) - 80}
                   stroke="#1560ff"
                   strokeWidth="2"
@@ -445,10 +447,10 @@ export default function Hero() {
                 y1={doorPositions[hoveredDoorIndex]?.y || 0}
                 x2={
                   // Left positioned door (3): path goes right
-                  hoveredDoorIndex === 3 
-                    ? (doorPositions[hoveredDoorIndex]?.x || 0) + 150 
-                    // Right positioned door (4): path goes left
-                    : (doorPositions[hoveredDoorIndex]?.x || 0) - 150
+                  hoveredDoorIndex === 3
+                    ? (doorPositions[hoveredDoorIndex]?.x || 0) + 150
+                    : // Right positioned door (4): path goes left
+                      (doorPositions[hoveredDoorIndex]?.x || 0) - 150
                 }
                 y2={doorPositions[hoveredDoorIndex]?.y || 0}
                 stroke="#1560ff"
@@ -461,45 +463,53 @@ export default function Hero() {
                 animate="visible"
               />
             )}
-           
           </svg>
         )}
 
         {/* Information Panel */}
         {hoveredDoorIndex !== null && doorPositions.length > 0 && (
           <motion.div
-            className={clsx("absolute z-50 bg-background p-1.5 min-w-fit ", [0, 1].includes(hoveredDoorIndex) ? `top-[${panelPosition.y}px] left-[${panelPosition.x}px]` : `top-[${panelPosition.y}px] left-[${panelPosition.x}px]`)}
+            className={clsx(
+              "bg-background absolute z-50 min-w-fit p-1.5",
+              [0, 1].includes(hoveredDoorIndex)
+                ? `top-[${panelPosition.y}px] left-[${panelPosition.x}px]`
+                : `top-[${panelPosition.y}px] left-[${panelPosition.x}px]`,
+            )}
             style={{
               left: `${panelPosition.x + 20}px`,
               top: `${panelPosition.y + 40}px`,
             }}
-            variants={[0, 1, 2].includes(hoveredDoorIndex) ? infoBoxAnimation : infoBoxAnimationRegular}
+            variants={
+              [0, 1, 2].includes(hoveredDoorIndex)
+                ? infoBoxAnimation
+                : infoBoxAnimationRegular
+            }
             initial="hidden"
             animate="visible"
           >
             {/* Corner Brackets */}
             {/* Top Left */}
-            <div className="absolute -top-1 -left-1 w-4 h-4">
-              <div className="absolute top-0 left-0 w-3 h-0.5 bg-primary"></div>
-              <div className="absolute top-0 left-0 w-0.5 h-3 bg-primary"></div>
+            <div className="absolute -top-1 -left-1 h-4 w-4">
+              <div className="bg-primary absolute top-0 left-0 h-0.5 w-3"></div>
+              <div className="bg-primary absolute top-0 left-0 h-3 w-0.5"></div>
             </div>
-            
+
             {/* Top Right */}
-            <div className="absolute -top-1 -right-1 w-4 h-4">
-              <div className="absolute top-0 right-0 w-3 h-0.5 bg-primary"></div>
-              <div className="absolute top-0 right-0 w-0.5 h-3 bg-primary"></div>
+            <div className="absolute -top-1 -right-1 h-4 w-4">
+              <div className="bg-primary absolute top-0 right-0 h-0.5 w-3"></div>
+              <div className="bg-primary absolute top-0 right-0 h-3 w-0.5"></div>
             </div>
-            
+
             {/* Bottom Left */}
-            <div className="absolute -bottom-1 -left-1 w-4 h-4">
-              <div className="absolute bottom-0 left-0 w-3 h-0.5 bg-primary"></div>
-              <div className="absolute bottom-0 left-0 w-0.5 h-3 bg-primary"></div>
+            <div className="absolute -bottom-1 -left-1 h-4 w-4">
+              <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-3"></div>
+              <div className="bg-primary absolute bottom-0 left-0 h-3 w-0.5"></div>
             </div>
-            
+
             {/* Bottom Right */}
-            <div className="absolute -bottom-1 -right-1 w-4 h-4">
-              <div className="absolute bottom-0 right-0 w-3 h-0.5 bg-primary"></div>
-              <div className="absolute bottom-0 right-0 w-0.5 h-3 bg-primary"></div>
+            <div className="absolute -right-1 -bottom-1 h-4 w-4">
+              <div className="bg-primary absolute right-0 bottom-0 h-0.5 w-3"></div>
+              <div className="bg-primary absolute right-0 bottom-0 h-3 w-0.5"></div>
             </div>
 
             <>
@@ -519,8 +529,6 @@ export default function Hero() {
                 2025-15-10 10:30:05 PST
               </span>
             </>
-
-           
           </motion.div>
         )}
 
