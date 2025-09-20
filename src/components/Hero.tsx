@@ -77,7 +77,7 @@ export default function Hero() {
   const drawLPathVertical: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i: number) => {
-      const delay = (i * 0.1) + 0.4; // Start after horizontal path completes
+      const delay = i * 0.1 + 0.4; // Start after horizontal path completes
       return {
         pathLength: 1,
         opacity: 1,
@@ -201,8 +201,7 @@ export default function Hero() {
           };
 
         case 3: // bottom-50 left-30 - left positioned door (horizontal path)
-
-        console.log(doorPos.y, panelHeight )
+          console.log(doorPos.y, panelHeight);
           return {
             x: doorPos.x + pathLength + 20, // Right of the path
             y: doorPos.y - panelHeight + 10,
@@ -342,8 +341,8 @@ export default function Hero() {
                 <motion.line
                   x1={
                     hoveredDoorIndex === 1
-                      ? doorPositions[hoveredDoorIndex]?.x - 14 || 0
-                      : doorPositions[hoveredDoorIndex]?.x + 14 || 0
+                      ? doorPositions[hoveredDoorIndex]?.x - 18 || 0
+                      : doorPositions[hoveredDoorIndex]?.x + 17 || 0
                   }
                   y1={doorPositions[hoveredDoorIndex]?.y || 0}
                   x2={
@@ -392,7 +391,7 @@ export default function Hero() {
               <>
                 {/* Horizontal segment (right to left) */}
                 <motion.line
-                  x1={doorPositions[hoveredDoorIndex]?.x - 14 || 0}
+                  x1={doorPositions[hoveredDoorIndex]?.x - 18 || 0}
                   y1={doorPositions[hoveredDoorIndex]?.y || 0}
                   x2={(doorPositions[hoveredDoorIndex]?.x || 0) - 100}
                   y2={doorPositions[hoveredDoorIndex]?.y || 0}
@@ -427,7 +426,7 @@ export default function Hero() {
               /* Vertical Path for bottom center door */
               <motion.line
                 x1={doorPositions[hoveredDoorIndex]?.x || 0}
-                y1={doorPositions[hoveredDoorIndex]?.y - 14 || 0}
+                y1={doorPositions[hoveredDoorIndex]?.y - 18 || 0}
                 x2={doorPositions[hoveredDoorIndex]?.x || 0}
                 y2={(doorPositions[hoveredDoorIndex]?.y || 0) - 80}
                 stroke="#1560ff"
@@ -443,7 +442,11 @@ export default function Hero() {
             ) : (
               /* Horizontal Path - for doors 3, 4 */
               <motion.line
-                x1={doorPositions[hoveredDoorIndex]?.x + 14 || 0}
+                x1={
+                  hoveredDoorIndex === 3
+                    ? doorPositions[hoveredDoorIndex]?.x + 17 || 0
+                    : doorPositions[hoveredDoorIndex]?.x - 18 || 0
+                }
                 y1={doorPositions[hoveredDoorIndex]?.y || 0}
                 x2={
                   // Left positioned door (3): path goes right
