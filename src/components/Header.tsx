@@ -52,9 +52,10 @@ export default function Header() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between cursor-pointer">
           {/* Logo */}
           <motion.div
+            onClick={() => (window.location.href = "/")}
             className="flex items-center"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
@@ -78,11 +79,7 @@ export default function Header() {
             <Button variant="ghost" className="hidden sm:flex">
               SDK Docs
             </Button>
-            <Button
-              variant="primary"
-            >
-             View the Dashboard
-            </Button>
+            <Button variant="primary">View the Dashboard</Button>
           </div>
         </div>
       </motion.div>

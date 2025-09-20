@@ -26,7 +26,7 @@ export default function TheSolution() {
 
     {
       id: "ascend-floors",
-      position: { top: "53.8%", left: "24.3%" },
+      position: { top: "55.6%", left: "27%" },
       title: "Driver ascend -4-5 floors",
       timestamp: "2025-15-10 10:30:05 PST",
       icon: "./icons/stairs.svg",
@@ -54,13 +54,13 @@ export default function TheSolution() {
         </div>
 
         <motion.div
-          className="relative overflow-hidden p-4 sm:p-6 md:p-8"
+          className="relative overflow-hidden "
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative">
+          <div className={`relative `}>
             {/* Desktop/Tablet Image - Hidden on mobile */}
             <div className="hidden sm:block">
               <Image
@@ -80,7 +80,7 @@ export default function TheSolution() {
               alt="Solution Mobile"
               width={1152}
               height={720}
-              className="block h-auto w-full object-cover sm:hidden"
+              className="block h-auto w-full object-cover sm:hidden p-4 sm:p-6 md:p-8"
               sizes="100vw"
               priority
             />
@@ -143,8 +143,6 @@ export default function TheSolution() {
                               </p>
                             </div>
                           </div>
-
-                      
                         </div>
                       </motion.div>
                     )}
@@ -165,7 +163,7 @@ export default function TheSolution() {
         >
           {/* Manual review made easy */}
           <motion.div
-            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            className="border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 border-t p-4 sm:border sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -191,7 +189,7 @@ export default function TheSolution() {
 
           {/* Automate workflows */}
           <motion.div
-            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            className="border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 border-t p-4 sm:border sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -212,7 +210,7 @@ export default function TheSolution() {
 
           {/* Smarter route optimization */}
           <motion.div
-            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
+            className="border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 border-t p-4 sm:border sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -237,7 +235,7 @@ export default function TheSolution() {
 
           {/* Wayfinding (Coming soon) */}
           <motion.div
-            className="border-t border-t-medium-gray sm:border-x-medium-gray flex flex-col items-start gap-6 space-y-4 sm:border p-4 sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8 mb-4 sm:mb-0"
+            className="border-t-medium-gray sm:border-x-medium-gray mb-4 flex flex-col items-start gap-6 space-y-4 border-t p-4 sm:mb-0 sm:border sm:border-y-0 sm:border-l-0 md:p-6 lg:p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
