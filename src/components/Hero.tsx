@@ -239,7 +239,7 @@ export default function Hero() {
         {/* Hero Content */}
         <div className="border-medium-gray relative z-20 mx-auto flex min-h-full items-end border border-x border-y-0 px-4 py-8 pb-12 sm:items-center sm:px-6 lg:px-8">
           <motion.div
-            className="relative z-20 flex max-w-xl flex-col gap-2 text-left motion-safe:transform-gpu sm:mx-auto"
+            className="relative z-20 flex w-full max-w-xl flex-col gap-2 text-left motion-safe:transform-gpu sm:mx-auto lg:w-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -265,20 +265,20 @@ export default function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="flex min-h-0 flex-wrap-reverse gap-4 pt-4 sm:min-h-12 sm:flex-nowrap sm:pt-8"
+              className="flex min-h-0 flex-col gap-4 pt-4 sm:min-h-12 sm:flex-row sm:pt-8"
             >
-              <Button variant="primary" className="mr-8">
+              <Button variant="primary" className="w-full sm:w-auto sm:mr-8">
                 View the Dashboard
               </Button>
-              <motion.p className="text-accent relative z-20 max-w-md border-l-2 border-l-[#d9d9d0] pl-8 text-left sm:max-w-72">
+              <motion.p className="text-accent relative z-20 max-w-md border-l-2 border-l-[#d9d9d0] pl-4 sm:pl-8 text-left sm:max-w-72">
                 Doorstep tracks parking, entrance, floor, and dropoff - giving
                 teams precise visibility into every delivery.
               </motion.p>
             </motion.div>
           </motion.div>
 
-          {/* Animated Door Icons */}
-          <div>
+          {/* Animated Door Icons - Desktop Only */}
+          <div className="hidden lg:block">
             {doorData.map((door, index) => (
               <motion.div
                 key={door.id}
@@ -330,9 +330,9 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* SVG Path Overlay - Dynamic Path Animation */}
+        {/* SVG Path Overlay - Dynamic Path Animation - Desktop Only */}
         {hoveredDoorIndex !== null && doorPositions.length > 0 && (
-          <svg className="pointer-events-none absolute top-0 left-0 z-40 h-full w-full overflow-visible">
+          <svg className="pointer-events-none absolute top-0 left-0 z-40 h-full w-full overflow-visible hidden lg:block">
             {/* Different path types based on door index */}
             {[0, 1, 2].includes(hoveredDoorIndex) ? (
               /* L-shaped Path for index 0: horizontal right then vertical up */
@@ -470,11 +470,11 @@ export default function Hero() {
           </svg>
         )}
 
-        {/* Information Panel */}
+        {/* Information Panel - Desktop Only */}
         {hoveredDoorIndex !== null && doorPositions.length > 0 && (
           <motion.div
             className={clsx(
-              "bg-background absolute z-50 min-w-fit p-1.5",
+              "bg-background absolute z-50 min-w-fit p-1.5 hidden lg:block",
               [0, 1].includes(hoveredDoorIndex)
                 ? `top-[${panelPosition.y}px] left-[${panelPosition.x}px]`
                 : `top-[${panelPosition.y}px] left-[${panelPosition.x}px]`,

@@ -15,21 +15,25 @@ export default function Integration() {
       name: "React",
       icon: "/react-icon.svg",
       text: "Integrate in React",
+      link: "https://docs.doorstep.ai/ReactNative/install",
     },
     {
       name: "Flutter",
       icon: "/flutter.svg",
       text: "Integrate in Flutter",
+      link: "https://docs.doorstep.ai/Flutter/install",
     },
     {
       name: "Android",
       icon: "/android.svg",
       text: "Integrate in Android",
+      link: "https://docs.doorstep.ai/Android/install",
     },
     {
       name: "IOS",
       icon: "/ios.svg",
       text: "Integrate in IOS",
+      link: "https://docs.doorstep.ai/iOS/install",
     },
   ];
 
@@ -175,10 +179,10 @@ export default function Integration() {
           }
         />
       </div>
-      <div className="flex items-center justify-between px-4 pb-12 sm:px-8">
+      <div className="flex flex-col gap-6 px-4 pb-12 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         {/* Navigation Tabs */}
         <motion.div
-          className="font-geist-mono flex gap-8 text-sm"
+          className="font-geist-mono flex flex-wrap gap-4 text-sm sm:gap-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -189,7 +193,7 @@ export default function Integration() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={clsx(
-                "flex items-center gap-2 uppercase transition-colors duration-300",
+                "flex items-center gap-2 uppercase transition-colors duration-300 text-xs sm:text-sm",
                 activeTab === tab.id
                   ? "text-primary underline underline-offset-8"
                   : "text-accent",
@@ -204,7 +208,7 @@ export default function Integration() {
         </motion.div>
         {/* CTA Buttons */}
         <motion.div
-          className="flex gap-4 self-end"
+          className="flex flex-col gap-2 self-end sm:flex-row sm:gap-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -212,7 +216,7 @@ export default function Integration() {
         >
           <Button
             variant="outline"
-            className="border-medium-gray bg-card hover:bg-card hover:border-primary group text-black"
+            className="border-medium-gray bg-card hover:bg-card hover:border-primary group text-black w-full sm:w-auto"
           >
             <a
               href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat"
@@ -221,7 +225,7 @@ export default function Integration() {
               Get a demo
             </a>
           </Button>
-          <Button variant="primary" className="px-6 py-2 text-sm">
+          <Button variant="primary" className="px-6 py-2 text-sm w-full sm:w-auto">
             <a
               href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat"
             >
@@ -240,12 +244,12 @@ export default function Integration() {
       >
         {/* Tab 1: Integration */}
         {activeTab === 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {integrationContent.map((item, index) => (
               <motion.div
                 key={index}
                 className={clsx(
-                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-6",
+                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-4 sm:p-6 hover:bg-[#f5f5f5]",
                   (index === 0 || index === 2) &&
                     "border-r-medium-gray border-r",
                 )}
@@ -296,21 +300,19 @@ export default function Integration() {
 
         {/* Tab 2: Frameworks */}
         {activeTab === 1 && (
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {frameworks.map((framework, index) => (
               <motion.div
                 key={framework.name}
                 className={clsx(
-                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-4 border-y p-4",
+                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-4 border-y p-4 hover:bg-[#f5f5f5]",
                   (index === 0 || index == 2) &&
                     "border-r-medium-gray border-r",
                 )}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{
-                  background: "#f5f5f5",
-                }}
+              
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <Image
@@ -322,7 +324,10 @@ export default function Integration() {
                 />
                 <div className="text-accent font-medium">
                   {framework.text}{" "}
-                  <motion.span className="inline-flex items-center text-black">
+                  <motion.span 
+                    className="inline-flex items-center text-black cursor-pointer hover:text-primary transition-colors duration-200" 
+                    onClick={() => {window.open(framework.link, '_blank')}}
+                  >
                     in less than 1 hour
                     <ChevronRight className="mt-0.5 size-4" />
                   </motion.span>
@@ -334,12 +339,12 @@ export default function Integration() {
 
         {/* Tab 3: Touchpoints */}
         {activeTab === 2 && (
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {touchpoints.map((touchpoint, index) => (
               <motion.div
                 key={index}
                 className={clsx(
-                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-6",
+                  "border-medium-gray flex min-h-[360px] flex-col items-start justify-between gap-6 border-y p-4 sm:p-6 hover:bg-[#f5f5f5]",
                   (index === 0 || index === 2) &&
                     "border-r-medium-gray border-r",
                 )}

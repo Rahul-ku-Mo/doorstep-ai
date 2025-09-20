@@ -72,7 +72,7 @@ export default function Header() {
           </motion.div>
 
           {/* Right side buttons */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2 sm:gap-8">
             <Button variant="ghost" className="hidden sm:flex">
               <a
                 href="/careers"
@@ -93,7 +93,10 @@ export default function Header() {
                 SDK Docs
               </a>
             </Button>
-            <Button variant="primary">View the Dashboard</Button>
+            <Button variant="primary" className="text-xs sm:text-sm px-3 sm:px-6">
+              <span className="hidden sm:inline">View the Dashboard</span>
+              <span className="sm:hidden">Dashboard</span>
+            </Button>
           </div>
         </div>
       </motion.div>

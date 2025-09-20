@@ -22,7 +22,7 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
 
           <div className={`border-medium-gray bg-[url("/dotted.svg")] mx-auto flex w-full max-w-[1152px] flex-col items-start justify-center gap-6 border px-4 py-10 sm:items-center lg:flex-row lg:px-8 lg:py-20`}>
             <motion.div
-              className="sm:text-4.5xl text-primary max-w-xl text-left text-3xl font-normal lg:max-w-3xl lg:gap-16"
+              className="sm:text-4.5xl text-primary max-w-xl text-left text-2xl font-normal sm:text-3xl lg:max-w-3xl lg:gap-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -33,9 +33,9 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
               </span>{" "}
               trust or efficiency.
             </motion.div>
-            <div className="flex items-center justify-center">
+            <div className="flex w-full items-center justify-center sm:w-auto">
               <motion.div
-                className="flex items-center justify-start gap-2 sm:gap-4"
+                className="flex w-full flex-col items-center justify-start gap-2 sm:w-auto sm:flex-row sm:gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -43,7 +43,7 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
               >
                 <Button
                   variant="ghost"
-                  className="!px-3 hover:text-primary"
+                  className="!px-3 hover:text-primary w-full sm:w-auto"
                   onClick={() => {
                     window.location.href = "https://docs.doorstep.ai/";
                   }}
@@ -52,7 +52,7 @@ export default function Footer({ withBar = false }: { withBar?: boolean }) {
                 </Button>
                 <Button
                   variant="outline"
-                  className="text-black border-medium-gray bg-card hover:bg-card hover:border-primary group"
+                  className="text-black border-medium-gray bg-card hover:bg-card hover:border-primary group w-full sm:w-auto"
                 >
                   <a href="https://calendly.com/d/cmqb-cg3-ywg/doorstep-intro-chat" className="group-hover:text-primary">
                     Contact Us
